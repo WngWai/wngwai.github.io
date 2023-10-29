@@ -8,8 +8,8 @@ site_description: WngWai的个人网站
 nav:
   - R语言:
     - 课堂笔记:
-      - 天纳: /R/lesson_note/dplyr.md
-      - 勤伟: /R/lesson_note/readr.md
+      - 天纳: R/lesson_note/dplyr.md
+      - 勤伟: R/lesson_note/readr.md
 
 
 
