@@ -8,10 +8,8 @@ site_description: WngWai的个人网站
 nav:
   - R语言:
     - 课堂笔记:
-      - 天纳: /R/lesson_note/R_study0916-tianna.R
-      - 勤伟: /R/lesson_note/Rlearning-qinwei.R
-      - 政:   /R/lesson_note/zheng.R
- 
+      - 天纳: /R/lesson_note/dplyr.md
+      - 勤伟: /R/lesson_note/readr.md
 
 
 
