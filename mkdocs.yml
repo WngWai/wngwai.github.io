@@ -13,25 +13,22 @@ nav:
 
 
 
-
-
-
 # [UI]
 ## [top]
 theme:
   name: material
   palette:
     - scheme: default # 日间模式
-      primary: indigo # 上方的
+      primary: teal # 上方的
       accent: orange # 链接等可交互元件的高亮色
       toggle:
-        icon: material/weather-night # 图标
+        icon: material/brightness-4 # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
     - scheme: slate # 夜间模式
-      primary: indigo
+      primary: teal
       accent: orange
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-7
         name: 切换至日间模式
   features:
     - navigation.tabs # 使用Tab来进行分类
@@ -66,6 +63,7 @@ plugins:
         - en
         - ja
   - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
