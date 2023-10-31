@@ -1,17 +1,27 @@
-# Welcome to MkDocs
+# Introduce
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+“千秋邈矣独留我，百战归来再读书”，欢迎收藏我的简易博客，主要内容为MEM在读期间整理和汇总的各类内容。
 
-## Commands
+---
+> 形而上则谓之道，形而下者谓之器。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+对于知识本身的执拗并不可取，如何解决工作、生活中遇到的问题。
 
-## Project layout
+> 他山之石可以攻玉。
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+不是不能做，而是没有时间做。所以就是节约大家时间，
+
+> 奥卡姆剃刀原理
+
+分享的内容仅限于，随时间裁剪更新。跟班级群众已经分享的文件不重叠。
+
+> 授人以鱼，不如授人以渔。
+
+我希望分享的不只局限于具体的知识，更是应对问题、提供解决思路的方法论。
+
+
+最后，感谢分享资料的同学，希望自己能够坚持下来，我相信时间
+
+
+
+
