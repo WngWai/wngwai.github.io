@@ -14,9 +14,6 @@ nav:
       - 社区: "other/communites.md"
   - R语言:
     - R/index.md
-    - 课堂笔记:
-      - R数据科学:
-      - 商务与经济统计:
     - R语言函数库:
       - 基础知识: "R/00 基础知识.md"
       - readr: "R/01 readr.md"
