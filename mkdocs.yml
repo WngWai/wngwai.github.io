@@ -14,6 +14,9 @@ nav:
       - 社区: "other/communites.md"
   - R语言:
     - R/index.md
+    - 课堂笔记:
+      - R数据科学:
+      - 商务与经济统计:
     - R语言函数库:
       - 基础知识: "R/00 基础知识.md"
       - readr: "R/01 readr.md"
@@ -24,9 +27,9 @@ nav:
     - 推荐视频: "ML/ML-Link.md"
   - 生活:
     - life/index.md
-      - 武大美食: "life/food-records.md"
-      - 酒店: "life/hotel.md"
-      - 有趣的运势: "life/predict.md"
+    - 武大美食: "life/food-records.md"
+    - 酒店: "life/hotel.md"
+    - 有趣的运势: "life/predict.md"
 
 
 # [UI]
