@@ -39,7 +39,7 @@ data <- data.frame(
 ggplot(data, aes(x = category, y = value)) +
   geom_bar(stat = "identity", fill = "blue", color = "black")
 ```
-![[Pasted image 20230918200713.png]]
+![Pasted image 20230918200713](attachments/Pasted%20image%2020230918200713.png)
 在这个示例中，我们创建了一个数据框`data`，其中包含了一个类别变量`category`和一个数值变量`value`。然后，使用`ggplot()`函数创建一个基本的绘图对象，并使用`geom_bar()`函数添加柱状图。在`aes()`函数中，我们将x轴映射到数据变量`category`，y轴映射到数据变量`value`。通过设置`stat`参数为"identity"，我们直接使用`value`变量的原始值。通过设置`fill`参数为"blue"和`color`参数为"black"，我们为柱状图指定了填充颜色和边框颜色。
 
 这个示例将创建一个简单的柱状图，其中x轴表示类别，y轴表示数值。每个类别对应一个柱子，其高度表示对应的数值大小。
@@ -79,7 +79,7 @@ ggplot(data, aes(x = category, y = value)) +
 
 希望这个示例能够帮助您理解在`geom_bar()`中使用不同的`position`参数取值的含义和效果。如果您有任何其他问题，请随时提问。
 
-### [[reorder()]]
+### [reorder()](../base-content/reorder().md)
 根据频数实现从大到小或从小到大的排布
 
 ###  coord_flip() 实现x、y轴互换
@@ -95,4 +95,4 @@ R可视化——ggplot2调整柱状图柱子宽度及间距 - 科研那点事儿
 
 ### 在组上加文本
 用到geom_text()函数
-![[43ddad84b875fa36d68452c27dfbefc.png]]
+![43ddad84b875fa36d68452c27dfbefc](attachments/43ddad84b875fa36d68452c27dfbefc.png)

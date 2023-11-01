@@ -25,7 +25,7 @@ pie(ratio, labels=disease,
     radius = 1.0,clockwise=T,
     main = "Male individuals")
 ```
-![[Pasted image 20231017144628.png]]
+![Pasted image 20231017144628](attachments/Pasted%20image%2020231017144628.png)
 
 
 在上面的示例中，我们首先创建了一个包含数值和类别的向量。然后，我们使用`pie()`函数根据这些数值绘制了相应比例的饼图。
@@ -41,4 +41,4 @@ pie(ratio, labels=disease,
 pie(decoration_count$sum_decoration, paste(decoration_count$decoration, label_decoration, "%"), radius = 1.0, clockwise=T, main = "房屋装修情况", cex = 0.8)
 ```
 paste()将装修标签和百分比标签和%号连接在一起
-![[Pasted image 20231019080018.png]]
+![Pasted image 20231019080018](attachments/Pasted%20image%2020231019080018.png)

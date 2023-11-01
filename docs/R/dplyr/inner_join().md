@@ -1,4 +1,4 @@
-![[Pasted image 20231023230251.png]]
+![Pasted image 20231023230251](attachments/Pasted%20image%2020231023230251.png)
 在函数中，您可以使用多个参数来指定**内连接**的行为。以下是`inner_join()`函数中常用参数的详细介绍和示例：
 ```R
 inner_join(x,y,by="key", )

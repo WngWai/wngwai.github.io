@@ -14,8 +14,9 @@
 - 面 facet_: 数据图表的排列
 
 - 统计转换 stat_: 数据的统计，对数据进行处理 ，比如百分位，拟合曲线或者和；
+![Pasted image 20231005110243](ggplot2/attachments/Pasted%20image%2020231005110243.png)
 
-![Pasted image 20231005110243](attachments/Pasted%20image%2020231005110243.png)
+---
 ### 画布：数据集+美学
 [ggplot()](ggplot2/ggplot().md) 创建一个基本的绘图对象base(就是**画布**)！在画布的基础上再叠加各种要素。指定**数据**集，设置数据和图形的整体属性。在上面可以叠加多个图形
 
@@ -87,8 +88,9 @@
 
 [facet_wrap()](ggplot2/facet_wrap().md) 基于另一个变量z分组分割x~y
 
+---
 ### 统计
-[stat_summary()](ggplot2/stat_summary().md) ?
+[stat_summary()](ggplot2/stat_summary().md) 
 
 `stat_*`函数用于**添加统计变换**（statistical transformation）到图表中，以便对数据进行汇总、计算或转换。这些函数提供了各种统计变换选项，可以根据数据的特点和需求进行灵活的数据处理。
 

@@ -1,5 +1,5 @@
 是dplyr包中的一个函数，用于按**照一个或多个变量对数据进行分组**操作。
-![[Pasted image 20231017160408.png]]
+![Pasted image 20231017160408](attachments/Pasted%20image%2020231017160408.png)
 分组后只是数据整体没有变化，只是添加了分组特征说明，ungroup()就是取消这个说明，不像python直接修改了分组列的数据。
 
 ```R
@@ -42,12 +42,12 @@ print(summary_data)
 daily <- group_by(flights, year, month, day)
 (per_day <- summarize(daily, flights = n(), .groups = "drop_last"))
 ```
-![[Pasted image 20231023145526.png]]
+![Pasted image 20231023145526](attachments/Pasted%20image%2020231023145526.png)
 
 ```R
 (per_month <- summarize(per_day, flights = sum(flights), .groups = "drop_last")
 ```
-![[Pasted image 20231023145615.png]]
+![Pasted image 20231023145615](attachments/Pasted%20image%2020231023145615.png)
 `.groups`的主要参数有4个：
 - `drop_last`：汇总结束后，将当前数据集的**最低一级分组结构删除**
 - `drop`：汇总结束后，将当前数据集**所有的分组结构删除**，数据集回到之前未分组的状态

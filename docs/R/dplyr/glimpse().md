@@ -19,7 +19,7 @@ data <- iris
 # 查看数据框摘要信息
 glimpse(data)
 ```
-![[Pasted image 20231012195044.png]]
+![Pasted image 20231012195044](attachments/Pasted%20image%2020231012195044.png)
 
 
 在上面的示例中，我们使用`iris`数据集作为示例数据框。然后，我们使用`glimpse()`函数查看数据框的简要摘要信息。函数会显示数据框的列名、数据类型和前几行的值，以及其他有关数据框结构的相关信息。

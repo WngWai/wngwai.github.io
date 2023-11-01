@@ -36,7 +36,7 @@ p <- ggplot(data, aes(x, value)) +
 # 根据y变量分组并绘制网格图
 p + facet_grid(rows = vars(y))
 ```
-![[Pasted image 20231005164810.png]]
+![Pasted image 20231005164810](attachments/Pasted%20image%2020231005164810.png)
 在上述示例中，我们首先加载`ggplot2`包，并创建了一个简单的数据集 `data`，包含了x和y的值以及一个随机生成的值。
 
 然后，我们使用`ggplot()`函数创建了一个基本图形 `p`，并使用`geom_point()`添加了散点图。
@@ -45,6 +45,6 @@ p + facet_grid(rows = vars(y))
 
 最后，我们调用`facet_grid()`函数来进行数据分组并绘制网格图。在`facet_grid()`函数中，我们使用了`rows`参数来指定按照`y`变量在行方向上进行分组。这将为每个独特的`y`值创建一个小面板，并在每个小面板中绘制对应的图形。
 
-![[Pasted image 20230916150509.png]]
+![Pasted image 20230916150509](attachments/Pasted%20image%2020230916150509.png)
 相关于按照多个变量进行分组，但对某个变量分组后没有对应数值，所以为空，没有散点
 

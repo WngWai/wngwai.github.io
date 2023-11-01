@@ -44,4 +44,4 @@ ggplot(data, aes(x = value)) +
 ### 柱状图和直方图的区别
 bar chart柱状图：数据不连续，有间隔；
 Histogram直方图：数据连续，无间隔。
-![[Pasted image 20231006092816.png|400]]
+![400](attachments/Pasted%20image%2020231006092816.png)

@@ -8,4 +8,4 @@
 ```
 
 
-![[Pasted image 20231012195027.png]]
+![Pasted image 20231012195027](attachments/Pasted%20image%2020231012195027.png)

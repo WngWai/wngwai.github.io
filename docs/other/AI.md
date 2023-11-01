@@ -1,4 +1,4 @@
-## VPN
+## **VPN**
 
 [西西里](https://my.xxldo.us/)
 
@@ -10,8 +10,8 @@
 
 [苹果手机V.P.N免费](https://apps.apple.com/app/id1370293473)
 
-## AI
-- 外网
+## **AI**
+- **外网**
 
 	[Poe](https://poe.com/)`无需手机验证集`成多个人工智能平台于一体的在线网站，可用QQ邮箱注册，GPT3.5等诸多模型免费
 
@@ -19,13 +19,13 @@
 
 	[GPT](https://openai.com/chatgpt)源网址，注册介绍见（新群中：FS CBU ChatGPT注册操作手册--简易版.pdf）
 
-- 内网
+- **内网**
 
 	[文心一言](https://yiyan.baidu.com/)
 
 	免登录，[GPT3.0](https://chat85.com/)
 
-- 浏览器[插件](https://www.bilibili.com/video/BV1724y1f7P8)
+- **浏览器[插件](https://www.bilibili.com/video/BV1724y1f7P8)**
 
 	[iTab插件](https://itab.link/)需要注册邮箱，自带Chat-GPT3.5， 时灵时不灵
 

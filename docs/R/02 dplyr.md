@@ -1,11 +1,11 @@
-### 数据的基础处理
-#### 筛选行/列
+## 数据的基础处理
+### 筛选行/列
 [filter()](dplyr/filter().md) 处理数据框数据（df），筛选满足条件的**行**
 
 [select()](dplyr/select().md) 按照**指定列**，形成新的数据框
 
 [select_if()](dplyr/select_if().md)选择满足**特定条件的列**
-#### 对行/列数据进行操作
+### 对行/列数据进行操作
 [arrange()](dplyr/arrange().md) 对df中行数据按**指定列中数据进行重新排序**
 
 [order()](base-content/order().md) 返回排序的**索引值**，内置排序函数
@@ -24,7 +24,7 @@
 
 [distinct()](dplyr/distinct().md) **去除重复观测值**
 
-### 分组统计
+## 分组统计
 [group_by()](dplyr/group_by().md) 指定列进行**分组**，分组后再summarize会**保留**分组列
 
 [ungroup()](dplyr/ungroup().md) **取消**分组，在使用管道符进行参数传递中使用的是同一个源数据，所以要及时撤销分组操作！
@@ -43,7 +43,7 @@
 
 [n_distinct()](dplyr/n_distinct().md)计算**唯一值数量**，注意唯一值数量指种类，跟上面的唯一值次数指频数不同
 
-### 处理关系数据
+## 处理关系数据
 [tribble()](dplyr/tribble().md) 创建**小规模的示例数据框**，大规模用df数据框
 
 [inner_join()](dplyr/inner_join().md) 内连接
@@ -59,7 +59,8 @@ right_join()右连接
 [anti_join()](dplyr/anti_join().md)反连接，目的是筛选左表数据，跟半连接相反，筛选右表没有的数据，返回在第一个数据框中存在而在第二个数据框中不存在的行。右无，左有的数据。
 
 [merge()](base-content/merge().md) 内置函数，不建议用
-### 抽样
+
+## 抽样
 [slice_sample()](dplyr/slice_sample().md) 从df中进行随机抽样
 
 [sample_n()](dplyr/sample_n().md)从数据集中随机抽取观察值

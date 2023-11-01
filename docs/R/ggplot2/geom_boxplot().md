@@ -41,7 +41,7 @@ ggplot(data, aes(x = group, y = value)) +
 上边界：Q3+1.5IQR
 下边界：Q1-1.5IQR
 最小值不超过下边界，线段正延伸到最小值点；最大值超过上边界，线段线延伸到边界内的最大值，超过边界的值散点画下
-![[Pasted image 20230923161216.png]]
+![Pasted image 20230923161216](attachments/Pasted%20image%2020230923161216.png)
 
 ### 可以不分组
 通常不需要手动对数据框进行分组。`geom_boxplot()` 函数会自动对数据进行分组，并根据分组绘制箱线图。
@@ -54,4 +54,4 @@ group_by(lj_top30, property_region) %>%
           plot.title = element_text(family = "songti sc", face = "bold", color = "black", size = 10, hjust = 0.5, vjust = 0,5))
 ungroup(lj_top30)
 ```
-![[Pasted image 20231018185244.png]]
+![Pasted image 20231018185244](attachments/Pasted%20image%2020231018185244.png)

@@ -1,4 +1,4 @@
-![[Pasted image 20231023230343.png]]
+![Pasted image 20231023230343](attachments/Pasted%20image%2020231023230343.png)
 您可以使用多个参数来指定全连接的行为。以下是`full_join()`函数中常用参数的详细介绍和示例：
 ```R
 

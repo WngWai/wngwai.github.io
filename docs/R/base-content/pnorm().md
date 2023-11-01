@@ -5,11 +5,11 @@ pnorm(x, mean = 0, sd = 1, lower.tail = TRUE)
 ```
 
 参数说明如下：
-- `x`：要计算累积分布函数的数值。
+- `x`：要计算累积分布函数的数值。**
 - `mean`：正态分布的均值（默认为 0）。
 - `sd`：正态分布的标准差（默认为 1）。
 - `lower.tail`：一个逻辑值，表示是否计算**累积分布函数的下尾概率**（默认为 `TRUE`）。如果为 `TRUE`，将计算 P(X ≤ x)；如果为 `FALSE`，将计算 P(X > x)，反着来的。
-![[Pasted image 20230924114211.png]]
+![Pasted image 20230924114211](attachments/Pasted%20image%2020230924114211.png)
 下面是一个示例，展示如何使用 `pnorm()` 函数计算正态分布的累积分布函数：
 
 ```R
@@ -29,4 +29,4 @@ print(cdf)
 
 ### 离群点
 μ加减3sigm，超出外的数据称为离群点。
-![[Pasted image 20230924112707.png]]
+![Pasted image 20230924112707](attachments/Pasted%20image%2020230924112707.png)

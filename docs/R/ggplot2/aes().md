@@ -6,7 +6,7 @@ aes(x = NULL, y = NULL, ..., color = NULL, fill = NULL, shape = NULL, size = NUL
 - `x`、`y`：指定数据变量与 x 轴和 y 轴的映射关系。可以是数据框中的列名、向量、公式等。
 - `...`：其他映射关系。
 都可以按照另一个变量分组映射，但必须另一个变量是**字符型**！
-![[Pasted image 20231024195533.png]]
+![Pasted image 20231024195533](attachments/Pasted%20image%2020231024195533.png)
 
 - `color`：指定数据变量与图形的**颜色**映射关系，（如"red"、"blue"），也可以使用十六进制颜色码（如"#FF0000"表示红色）。另一个变量**可以是数值**！
 - `fill`：指定数据变量与图形的**填充颜色**映射关系，。
@@ -56,7 +56,7 @@ ggplot(data = df, aes(x = A, y = B)) +
   geom_line() +
   geom_smooth(aes(x = -A))
 ```
-![[Pasted image 20231005115603.png]]
+![Pasted image 20231005115603](attachments/Pasted%20image%2020231005115603.png)
 线图层与散点图层的映射关系不受全局映射关系的影响，我们在`geom_line()`函数中重新定义了局部映射关系。
 这样，通过`ggplot()`函数和`geom_line()`函数的不同`aes()`定义，我们可以在同一个图形中同时显示散点图和线图，并为它们指定不同的映射关系和颜色。
 
