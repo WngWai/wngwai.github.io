@@ -60,7 +60,7 @@ theme:
     repo: fontawesome/brands/github
 edit_uri: blob/main/docs # 编辑按钮跳转的链接
 ## [top-right corner]
-repo_url: https://github.com/WngWai/wngwai.github.io.git # 右上角点击跳转的链接
+repo_url: https://github.com/WngWai/wngwai.github.io # 右上角点击跳转的链接
 repo_name: wngwai.github.io # 右上角的名字
 ## [bottom-left corner]
 copyright: WngWai CC-BY-4.0 # 左下角的版权声明
