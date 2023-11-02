@@ -8,10 +8,12 @@ site_description: WngWai的简易博客
 nav:
   - 相关分享:
     - other/index.md
+    - 工具分享:
+      - Obsidian: "tool/Obsidian"
     - 链接:
       - 推荐视频: "other/Link.md"
       - 外网和AI: "other/AI.md"
-      - 社区: "other/communites.md"
+      - 社区: "other/communites.md" 
   - R语言:
     - R/index.md
     - R语言函数库:

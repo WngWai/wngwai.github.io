@@ -4,7 +4,7 @@
 
 	[UP主汉语配音-【线性代数的本质】合集-转载于3Blue1Brown官方双语](https://www.bilibili.com/video/BV1ib411t7YR/?share_source=copy_web)
 
-	[【【线性代数的本质】】](https://www.bilibili.com/video/BV1Hy4y1a7wm)
+	[【线性代数的本质】](https://www.bilibili.com/video/BV1Hy4y1a7wm)
 
 - 概率论与数理统计：
 
