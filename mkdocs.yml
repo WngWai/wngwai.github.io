@@ -16,6 +16,7 @@ nav:
       - 社区: "other/communites.md" 
   - R语言:
     - R/index.md
+    - Rstudio配置GitHub: "tool/Git"
     - R语言函数库:
       - 基础知识: "R/00 基础知识.md"
       - readr: "R/01 readr.md"
