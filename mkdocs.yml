@@ -27,7 +27,7 @@ nav:
     - 推荐视频: "ML/ML-Link.md"
   - 生活:
     - life/index.md
-    - 吃够本: "life/food-records.md"
+    - 吃不够: "life/food-records.md"
     - 睡不醒: "life/hotel.md"
     - 明天会下雨: "life/predict.md"
 
