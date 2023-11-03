@@ -30,6 +30,7 @@
 [ungroup()](dplyr/ungroup().md) **取消**分组，在使用管道符进行参数传递中使用的是同一个源数据，所以要及时撤销分组操作！
 
 - 聚类
+
 	[summarize()、summarise()](dplyr/summarize()、summarise().md) **统计分析**列数据
 
 	[slice_max()](dplyr/slice_max().md)指定最大值的观测行
