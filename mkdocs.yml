@@ -22,6 +22,9 @@ nav:
       - readr: "R/01 readr.md"
       - dplyr: "R/02 dplyr.md"
       - ggplot2: "R/03 ggplot2.md"
+  - MySQL:
+    - mysql/index.md
+    - MySQL: "mysql/MySQL.md"
   - 机器学习:
     - ML/index.md
     - 推荐视频: "ML/ML-Link.md"
