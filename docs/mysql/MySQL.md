@@ -1,4 +1,4 @@
-# MySQL
+MySQL
 # 基础篇
 MySQL匹配环境后，直接win+R进cmd
 
