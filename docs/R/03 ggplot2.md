@@ -56,6 +56,8 @@
 
 [scale_x_continuous()](ggplot2/scale_x_continuous().md) 对坐标数据进行插接？？？
 
+[scale_y_continuous()](ggplot2/scale_y_continuous().md)调整图形的y轴刻度和标签
+
 - `scale_color_*()`: 设置图形中**填充颜色和边框颜色**的属性。
 
 	[scale_color_manual()](ggplot2/scale_color_manual().md)设置图形的比例尺，调整轴刻度、标签、颜色和形状等属性。其中 * 表示具体的比例尺

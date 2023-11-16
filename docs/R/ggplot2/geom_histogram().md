@@ -1,17 +1,28 @@
-在R语言中，`ggplot2`包中的`geom_histogram()`函数用于绘制直方图，显示定量变量的分布情况。
+在R语言中，`ggplot2`包中的`geom_histogram()`函数用于绘制**直方图**，显示定量变量的分布情况。
+
+对连续型变量分组统计频数。千万别跟柱状图（离散变量统计频数）混淆
+
 **函数定义**：
 ```R
 geom_histogram(mapping = NULL, data = NULL, stat = "bin", position = "stack", ..., binwidth = NULL, bins = NULL, na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 ```
 **参数**：
 - `mapping`：一个映射（aesthetic mapping）对象，用于映射数据变量到图形属性的**aes()函数或aes()函数的参数**。
-- `data`：huishu**数据框**。
+
+- `data`：**数据框**。
+
 - `stat`：统计变换的名称。默认为"bin"，表示**将数据分组为柱状图**。
+
 - `position`：柱状图的放置方式。可以是"stack"（默认，堆叠显示）或"dodge"（并列显示）。
+
 - `binwidth`：指定柱**状图的宽度**，用于控制分组的粒度。组距，组距越小，
+
 - `bins`：指定**柱状图的数量**，用于控制**分组的个数**。
+
 - `na.rm`：逻辑值，指示**是否忽略缺失值**。
+
 - `show.legend`：用于控制是否**显示图例**。
+
 - `inherit.aes`：逻辑值，指示**是否继承父图层的aes()映射**。
 
 **示例**：
@@ -45,3 +56,31 @@ ggplot(data, aes(x = value)) +
 bar chart柱状图：数据不连续，有间隔；
 Histogram直方图：数据连续，无间隔。
 ![400](attachments/Pasted%20image%2020231006092816.png)
+
+### 设置直方图初始值
+[[scale_x_continuous()]] 限制了坐标轴的范围，但分组还是默认分组
+```R
+# input data
+df_ppg <- read.csv("./data/NBAPlayerPts.csv")
+
+# 
+ggplot(df_ppg) +
+  geom_histogram(aes(x=PPG)) +
+  scale_x_continuous(limits = c(10, 30))
+```
+![[Pasted image 20231108201222.png]]
+
+
+把x轴的坐标和geom_histogram()中的组距、组数限制下，发现默认分组起始组是11-13，而非10-12！
+```R
+# input data
+df_ppg <- read.csv("./data/NBAPlayerPts.csv")
+
+# 
+ggplot(df_ppg) +
+  geom_histogram(aes(x = PPG), binwidth = 2, bins = 15) +
+  scale_x_continuous(breaks = seq(10,30,2), limits = c(10, 30)) +
+  scale_y_continuous(breaks = seq(1,18))
+```
+
+![[Pasted image 20231108224752.png]]

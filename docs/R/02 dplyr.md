@@ -25,7 +25,8 @@
 [distinct()](dplyr/distinct().md) **去除重复观测值**
 
 ## 分组统计
-[group_by()](dplyr/group_by().md) 指定列进行**分组**，分组后再summarize会**保留**分组列
+[group_by()](dplyr/group_by().md) 指定列进行**分组**，分组后再用summarize()后会**保留**分组列
+	[cut()](dplyr/cut().md)函数，进行固定范围值添加新组
 
 [ungroup()](dplyr/ungroup().md) **取消**分组，在使用管道符进行参数传递中使用的是同一个源数据，所以要及时撤销分组操作！
 

@@ -1,6 +1,6 @@
 是dplyr包中的一个函数，用于按**照一个或多个变量对数据进行分组**操作。
 ![Pasted image 20231017160408](attachments/Pasted%20image%2020231017160408.png)
-分组后只是数据整体没有变化，只是添加了分组特征说明，ungroup()就是取消这个说明，不像python直接修改了分组列的数据。
+分组后数据整体没有变化，只是添加了分组特征说明，ungroup()就是取消这个说明，不像python直接修改了分组列的数据。
 
 ```R
 group_by(.data, ...)
@@ -40,10 +40,12 @@ print(summary_data)
 以group_by(flights, year, month, day)为例子
 ```R
 daily <- group_by(flights, year, month, day)
+
 (per_day <- summarize(daily, flights = n(), .groups = "drop_last"))
 ```
 ![Pasted image 20231023145526](attachments/Pasted%20image%2020231023145526.png)
 
+上面将day的组分组释放了，这级再求就是按照month最优一个分组来进行汇总统计。
 ```R
 (per_month <- summarize(per_day, flights = sum(flights), .groups = "drop_last")
 ```
@@ -99,4 +101,50 @@ print(grouped_df)
 
 总结起来，R语言中的`group_by()`函数默认将包含NA值的变量作为一个单独的组进行处理。您可以通过设置`na.action`参数来调整对NA值的处理方式。
 
-如果您有任何进一步的问题，请随时提问！
+
+### 高级分组：指定范围进行分组cut()
+用到[[cut()]]函数，强制按离散型变量进行分组？
+
+```R
+# 导入dplyr包
+library(dplyr)
+
+# 创建一个示例数据框
+df <- data.frame(Player = c("Player1", "Player2", "Player3", "Player4", "Player5"),
+                 PPG = c(15, 8, 12, 18, 23))
+
+# 定义分组区间
+breaks <- seq(10, 30, by = 2)  # 从10到30，每2为一个区间
+
+# 使用cut函数创建分组
+df <- df %>%
+  mutate(PPG_Group = cut(PPG, breaks = breaks, labels = FALSE, include.lowest = TRUE)) %>%
+  group_by(PPG_Group)
+
+# 输出分组后的数据框
+print(df)
+
+```
+
+![[Pasted image 20231108200433.png]]
+
+**正确的做法!**
+```R
+# input data
+df_ppg <- read.csv("./data/NBAPlayerPts.csv")
+
+# 使用cut函数创建因子
+breaks <- seq(10, 30, by = 2)
+df_ppg_fre <- df_ppg %>%
+  mutate(PPG_Group = cut(PPG, breaks = breaks,include.lowest = TRUE)) %>% 
+  group_by(PPG_Group) %>% 
+  summarise(PPG_Group_count = n(), .groups = "drop")
+
+# 绘制柱状图
+df_ppg_fre %>% 
+  ggplot() +
+  geom_bar(aes(x = PPG_Group, y = PPG_Group_count), stat = "identity") +
+  scale_y_continuous(breaks = seq(0,20))
+```
+
+![[Pasted image 20231114144302.png]]
