@@ -19,9 +19,10 @@ nav:
     - Rstudio配置GitHub: "tool/Git"
     - R语言函数库:
       - 基础知识: "R/00 基础知识.md"
-      - readr: "R/01 readr.md"
-      - dplyr: "R/02 dplyr.md"
-      - ggplot2: "R/03 ggplot2.md"
+      - 基础函数: "R/01 基础函数.md"
+      - readr: "R/02 readr.md"
+      - dplyr: "R/03 dplyr.md"
+      - ggplot2: "R/04 ggplot2.md"
   - MySQL:
     - mysql/index.md
     - MySQL基础篇: "mysql/MySQL.md"
