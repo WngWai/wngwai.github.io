@@ -5,7 +5,9 @@ rm(list = ls(), envir = as.environment(pos = 1), inherits = FALSE)
 ```
 **参数**：
 - `list`：要删除的对象的名称或名称的向量。默认为当前环境中的所有对象，使用`ls()`函数获取对象列表。
+
 - `envir`：要删除对象的环境。默认为当前环境，使用`as.environment(pos = 1)`获取当前环境。
+
 - `inherits`：一个逻辑值，表示是否删除继承自指定对象的对象。默认为`FALSE`，即只删除指定的对象。
 
 1. 删除单个对象：

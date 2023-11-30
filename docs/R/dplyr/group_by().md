@@ -1,5 +1,7 @@
 是dplyr包中的一个函数，用于按**照一个或多个变量对数据进行分组**操作。
+
 ![Pasted image 20231017160408](attachments/Pasted%20image%2020231017160408.png)
+
 分组后数据整体没有变化，只是添加了分组特征说明，ungroup()就是取消这个说明，不像python直接修改了分组列的数据。
 
 ```R
@@ -7,6 +9,7 @@ group_by(.data, ...)
 ```
 
 - `.data`: 要进行分组操作的数据框或数据集。
+
 - `...`: **一个或多个变量**，用于指定分组的依据。可以是变量名、变量位置或变量表达式。
 
 以下是一个示例，展示了如何使用`group_by()`函数对数据进行分组：
@@ -103,7 +106,7 @@ print(grouped_df)
 
 
 ### 高级分组：指定范围进行分组cut()
-用到[[cut()]]函数，强制按离散型变量进行分组？
+用到[cut()](cut().md)函数，强制按离散型变量进行分组？
 
 ```R
 # 导入dplyr包
@@ -126,7 +129,7 @@ print(df)
 
 ```
 
-![[Pasted image 20231108200433.png]]
+![Pasted image 20231108200433](attachments/Pasted%20image%2020231108200433.png)
 
 **正确的做法!**
 ```R
@@ -147,4 +150,4 @@ df_ppg_fre %>%
   scale_y_continuous(breaks = seq(0,20))
 ```
 
-![[Pasted image 20231114144302.png]]
+![Pasted image 20231114144302](attachments/Pasted%20image%2020231114144302.png)

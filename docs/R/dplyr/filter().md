@@ -2,7 +2,9 @@
 ```R
 filter(data, ...)
 ```
+
 - **.data**: 数据框或数据表，表示要筛选的数据源。
+
 - **...**: 逻辑条件，用于指定要筛选的行。条件可以是一个或多个，它们将被连接起来形成筛选表达式。
 筛选表达式可以使用以下逻辑运算符：
 - **\==**: 等于。
@@ -54,3 +56,10 @@ lj_top30 <- dplyr::filter(lj, property_region == property_names$property_region)
 ```
 不能用**等于号**，否则只返回固定数值的行数；
 不能在filter函数中**加额外df**，指定df$column会显示报错！
+
+
+https://blog.csdn.net/weixin_39366714/article/details/126578371扩展
+filter_all
+if
+at
+

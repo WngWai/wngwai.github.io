@@ -13,6 +13,10 @@ geom_histogram(mapping = NULL, data = NULL, stat = "bin", position = "stack", ..
 
 - `stat`：统计变换的名称。默认为"bin"，表示**将数据分组为柱状图**。
 
+- `color`：直方图**边框颜色**！
+
+- `fill`：指定数据变量与图形的**填充颜色**映射关系，。
+
 - `position`：柱状图的放置方式。可以是"stack"（默认，堆叠显示）或"dodge"（并列显示）。
 
 - `binwidth`：指定柱**状图的宽度**，用于控制分组的粒度。组距，组距越小，
@@ -58,7 +62,7 @@ Histogram直方图：数据连续，无间隔。
 ![400](attachments/Pasted%20image%2020231006092816.png)
 
 ### 设置直方图初始值
-[[scale_x_continuous()]] 限制了坐标轴的范围，但分组还是默认分组
+[scale_x_continuous()](scale_x_continuous().md) 限制了坐标轴的范围，但分组还是默认分组
 ```R
 # input data
 df_ppg <- read.csv("./data/NBAPlayerPts.csv")
@@ -68,7 +72,7 @@ ggplot(df_ppg) +
   geom_histogram(aes(x=PPG)) +
   scale_x_continuous(limits = c(10, 30))
 ```
-![[Pasted image 20231108201222.png]]
+![Pasted image 20231108201222](attachments/Pasted%20image%2020231108201222.png)
 
 
 把x轴的坐标和geom_histogram()中的组距、组数限制下，发现默认分组起始组是11-13，而非10-12！
@@ -83,4 +87,4 @@ ggplot(df_ppg) +
   scale_y_continuous(breaks = seq(1,18))
 ```
 
-![[Pasted image 20231108224752.png]]
+![Pasted image 20231108224752](attachments/Pasted%20image%2020231108224752.png)

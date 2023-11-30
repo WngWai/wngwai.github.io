@@ -1,4 +1,7 @@
 在R语言中，`glm()`函数是用于**拟合广义线性模型**的内置函数。
+
+![[Pasted image 20231122105019.png]]
+
 **函数定义**：
 ```R
 glm(formula, data, family = gaussian, subset, weights, na.action,
@@ -11,6 +14,8 @@ glm(formula, data, family = gaussian, subset, weights, na.action,
 - `formula`：一个公式，指定了广义线性模型的形式。通常包含自变量和因变量的关系。
 - `data`：一个数据框，包含用于构建模型的所有变量。
 - `family`：一个描述误差结构和链接函数的对象。默认为高斯分布，即适用于普通线性回归。
+family = binomial 用于逻辑回归
+
 - `subset`：一个逻辑向量或表达式，用于指定用于拟合模型的子集观测。
 - `weights`：一个数值向量，用于为每个观测指定权重。
 - `na.action`：一个函数，用于处理缺失值。

@@ -1,12 +1,15 @@
 在R语言中，`optim()`函数是一个用于**最优化问题**的内置函数，它可以寻找**给定目标函数的最小值或最大值**。
+
 **函数定义**：
 ```R
 optim(par, fn, ..., method = "Nelder-Mead", lower = -Inf, upper = Inf, control = list(), hessian = FALSE)
 ```
+
 **参数**：
 - `par`：一个数值向量，表示目标函数的**参数的初始值**。
 
 - `fn`：一个函数，表示要**最小化或最大化的目标函数**。该函数的第一个参数应是参数向量。**cost函数**，习惯性用一个向量来替代多元
+
 ```R
 fr <- function(x) {   ## Rosenbrock Banana function
     x1 <- x[1]
@@ -14,6 +17,7 @@ fr <- function(x) {   ## Rosenbrock Banana function
     100 * (x2 - x1 * x1)^2 + (1 - x1)^2
 }
 ```
+
 - `...`：传递给目标函数`fn`的其他参数。
 - `method`：一个字符，表示要使用的**优化算法的名称**。默认为"Nelder-Mead"，表示使用Nelder-Mead算法。
 - `lower`：一个数值向量，表示**参数的下界**。默认为**负无穷**。

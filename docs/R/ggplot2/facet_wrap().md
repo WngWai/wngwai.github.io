@@ -1,5 +1,9 @@
 是ggplot2包中的一个函数，用于**将数据分割成多个小图**，并根据某个变量的**水平值创建多个子图**。它可用于将数据按照某个因子变量进行分组，并在每个子图中绘制相应的图形。
-以下是`facet_wrap()`函数的使用方法和示例：
+
+有空研究下
+R语言ggplot笔记（三）：基础语法篇（下） - 柚子啊柚子的文章 - 知乎
+https://zhuanlan.zhihu.com/p/101877243
+
 ```R
 facet_wrap(~ variable, nrow = NULL, ncol = NULL, scales = "fixed", shrink = TRUE, labeller = "label_value", as.table = TRUE, switch = NULL, dir = "h", strip.position = "top")
 ```

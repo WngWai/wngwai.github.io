@@ -1,12 +1,14 @@
 在R语言中，`lm()`函数是用于拟合线性回归模型的**内置函数**。
+
 **函数定义**：
 ```R
 lm(formula, data, subset, weights, na.action,
    method = "qr", model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE,
    contrasts = NULL, offset, ...)
 ```
+
 **参数**：
-- `formula`：一个公式，指定了回归模型的形式。通常包含自变量和因变量的关系。**y ~ x**
+- `formula`：一个公式，指定了回归模型的形式。通常包含自变量和因变量的关系。形式是**y ~ x**，可以直接用data中的列标题，如column1~column2
 - `data`：一个数据框，包含用于**构建模型的所有变量**。
 - `subset`：一个逻辑向量或表达式，用于指定用于拟合模型的子集观测。
 - `weights`：一个数值向量，用于为每个观测指定权重。

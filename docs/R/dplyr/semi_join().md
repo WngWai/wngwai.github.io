@@ -38,3 +38,21 @@ print(semi_joined_df)
 - 半连接（semi-join）：半连接操作返回的结果集只包含左侧表格中满足连接条件的行，并且不会返回右侧表格的任何数据。它只关心左侧表格中的匹配行是否存在于右侧表格中，而不关心右侧表格中的具体值。如果左侧表格中的某个键值在右侧表格中存在至少一次匹配，则该行将包含在结果集中。
 
 
+### 筛选主键的方式
+代码还是有些问题，特别是count()的使用。
+
+```R
+- 筛选非主键信息
+data %>% 
+  group_by(col1, col2) %>% 
+  count() %>% 
+  filter(n >= 2) %>% 
+  semi_join(data, by = 'ID')
+
+-- 筛选主键信息
+data %>% 
+  group_by(col1, col2) %>% 
+  count() %>% 
+  filter(n >= 2) %>% 
+  anti_join(data, by = 'ID')
+```

@@ -25,6 +25,8 @@
 ### 几何形状层：[geom_()](ggplot2/geom_().md)
 真正意义上的在画布上呈现出来几个图形
 
+[color详情](ggplot2/color详情.md)
+
 [geom_point()](ggplot2/geom_point().md) 画散点图，**数据映射**
 
 [geom_line()](ggplot2/geom_line().md) 画折线图
@@ -54,13 +56,13 @@
 
 [labs()](ggplot2/labs().md): 设置图形的**标签**，包括标题、轴标签、图例标题等。
 
-[scale_x_continuous()](ggplot2/scale_x_continuous().md) 对坐标数据进行插接？？？
+[scale_x_continuous()](ggplot2/scale_x_continuous().md) 调整图形的x轴刻度和标签
 
 [scale_y_continuous()](ggplot2/scale_y_continuous().md)调整图形的y轴刻度和标签
 
 - `scale_color_*()`: 设置图形中**填充颜色和边框颜色**的属性。
 
-	[scale_color_manual()](ggplot2/scale_color_manual().md)设置图形的比例尺，调整轴刻度、标签、颜色和形状等属性。其中 * 表示具体的比例尺
+	[scale_color_manual()](ggplot2/scale_color_manual().md)手动调整颜色映射
 
 - `scale_fill_*()`
 	scale_fill_manual(): 手动设置**离散变量的填充颜色**。可以指定每个离散值对应的具体颜色。
@@ -86,9 +88,9 @@
 	coord_map()
 
 ### 分面绘图
-[facet_grid()](ggplot2/facet_grid().md) ???将x/y数据拆分为多个组，平行或并列绘制
+[facet_grid()](ggplot2/facet_grid().md) 基于一个因子进行分面，如z，分割x~y
 
-[facet_wrap()](ggplot2/facet_wrap().md) 基于另一个变量z分组分割x~y
+[facet_wrap()](ggplot2/facet_wrap().md) 基于一个或多个因子分面，如z1、z2...，分割x~y
 
 ---
 ### 统计
@@ -104,7 +106,7 @@
 
 `stat_boxplot()`：用于绘制箱线图，显示数据的分布情况，包括中位数、四分位数、异常值等。
 
-`stat_density()`：用于生成密度图，估计数据的概率密度函数，可用于分布形状的可视化。
+[stat_density()](ggplot2/stat_density().md)：用于生成密度图，估计数据的概率密度函数，可用于分布形状的可视化。
 
 `stat_ecdf()`：用于生成经验累积分布函数（empirical cumulative distribution function），展示数据的累积分布情况。
 

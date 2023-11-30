@@ -39,7 +39,7 @@ ggplot(df, aes(x, y)) +
 你可以根据自己的数据和需求，通过调整这些参数来定制和美化 x 轴。此外，`scale_x_continuous()` 还有其他参数可以使用，例如 `limits`（限制范围的自动计算）和 `breaks`（自定义刻度位置），你可以根据需要查阅 ggplot2 的文档来进一步了解。
 
 ### 设置直方图初始值
-[[scale_x_continuous()]] 限制了坐标轴的范围，但分组还是默认分组
+[scale_x_continuous()](.md) 限制了坐标轴的范围，但分组还是默认分组
 ```R
 # input data
 df_ppg <- read.csv("./data/NBAPlayerPts.csv")
@@ -49,7 +49,7 @@ ggplot(df_ppg) +
   geom_histogram(aes(x=PPG)) +
   scale_x_continuous(limits = c(10, 30))
 ```
-![[Pasted image 20231108201222.png]]
+![Pasted image 20231108201222](attachments/Pasted%20image%2020231108201222.png)
 
 
 把x轴的坐标和geom_histogram()中的组距、组数限制下，发现默认分组是11-13，而非10-12！
@@ -64,4 +64,4 @@ ggplot(df_ppg) +
   scale_y_continuous(breaks = seq(1,18))
 ```
 
-![[Pasted image 20231108224752.png]]
+![Pasted image 20231108224752](attachments/Pasted%20image%2020231108224752.png)

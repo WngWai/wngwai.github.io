@@ -31,6 +31,22 @@ https://zhuanlan.zhihu.com/p/26388833
 以上三种方法都可以用来选取数据框中的前多少行。您可以根据自己的需求选择适合的方法。
 
 
+### 根据某列中的数据，筛选另一列同行数据
+```R
+# 示例数据框
+df <- data.frame(
+  field1 = c("A", "B", "A", "C", "B"),
+  field2 = c(10, 20, 30, 40, 50)
+)
+
+# 使用基础的数据框子集选择语法
+filtered_values <- df[df$field1 == "A", "field2"]
+
+# 输出结果
+print(filtered_values)
+
+```
+
 
 ### df[[]]
 在R语言中，数据框的行和列的选择操作使用了不同的语法。

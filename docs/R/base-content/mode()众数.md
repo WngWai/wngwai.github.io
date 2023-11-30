@@ -67,3 +67,19 @@ print(mode_values)
 4. `as.numeric()` 将结果转换为数值类型，因为 `table()` 函数的结果会返回因子类型的名称。
 
 当你运行这个函数时，它会返回向量中所有的众数。如果有多个值出现频率相同且都是最高的，那么这些值都将被返回。
+
+
+或直接在df上进行操作：
+
+```r
+# the function for computing mode
+mode <- df_bbt %>% 
+  group_by(Viewers..millions.) %>%
+  summarise(count = n()) %>% 
+  slice_max(count, with_ties = TRUE)
+
+# the mean, median, and mode
+cat(paste0("the mean of viewers:", round(mean(df_bbt$Viewers..millions.),2), "\n",
+          "the median of viewers:", median(df_bbt$Viewers..millions.), "\n"))
+cat("the mode of viewers:", mode$Viewers..millions.)
+```

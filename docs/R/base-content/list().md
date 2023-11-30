@@ -1,5 +1,7 @@
 list() 是 R 语言中用于创建列表（list）的函数。
+
 这边的列表跟python中的列表有些差异，是一个个组成成分构建起来的。
+
 ```R
 list(...)
 ```
@@ -10,6 +12,7 @@ list(...)
 my_list <- list("apple", 2, TRUE)
 print(my_list)
 ```
+
 输出结果为：
 ```R
 [[1]]
@@ -22,13 +25,14 @@ print(my_list)
 [1] TRUE
 ```
 
-示例 2：创建一个包含向量和矩阵的列表
+示例 2：创建一个**包含向量和矩阵的列表**
 ```R
 vec <- c(1, 2, 3)
 mat <- matrix(1:6, nrow = 2)
 my_list <- list(vec, mat)
 print(my_list)
 ```
+
 输出结果为：
 ```R
 [[1]]
@@ -46,6 +50,7 @@ inner_list <- list("x", "y", "z")
 my_list <- list(1, inner_list, 3)
 print(my_list)
 ```
+
 输出结果为：
 ```R
 [[1]]
