@@ -2,9 +2,9 @@
 
 [scan()](../readr/scan().md)扫描读取
 
-[writeLines()](writeLines().md)将字符串写入文件
+[writeLines()](stringr/writeLines().md)将字符串写入文件
 
-[identical()](identical().md)两个内容相比较
+[identical()](stringr/identical().md)两个内容相比较
 ## 字符串常用内容
 **转义**符号：`\`
 
@@ -16,70 +16,70 @@
 str_dup(): 复制字符串。
 
 ### 属性
-[str_length](str_length.md)**单个字符串**中字符的**长度**
+[str_length](stringr/str_length.md)**单个字符串**中字符的**长度**
 
-[str_count()](str_count().md)根据指定模式，对每个字符串中出现相同模式内容的次数进行计数，单个字符串就结果是数值，字符串向量的结果是数值向量
+[str_count()](stringr/str_count().md)根据指定模式，对每个字符串中出现相同模式内容的次数进行计数，单个字符串就结果是数值，字符串向量的结果是数值向量
 
 ### 常规操作
 #### 增
 
-[str_c()](str_c().md)根据**指定分隔符**将多个字符串**连接**成一个字符串
+[str_c()](stringr/str_c().md)根据**指定分隔符**将多个字符串**连接**成一个字符串
 
-[str_pad()](str_pad().md)用**特定字符**填充字符串的**两侧**。
+[str_pad()](stringr/str_pad().md)用**特定字符**填充字符串的**两侧**。
  
 #### 删
 
-[str_trim()](str_trim().md)**移除**字符串开头和结尾的**空格**
+[str_trim()](stringr/str_trim().md)**移除**字符串开头和结尾的**空格**
 
 #### 改
 - **排序**
 
-[str_sort()](str_sort().md)对字符向量进行排序，如按照美式英语，返回排序后的向量
+[str_sort()](stringr/str_sort().md)对字符向量进行排序，如按照美式英语，返回排序后的向量
 
-[str_order()](str_order().md)按**字母**顺序排序，返回排序后的**元素在原始向量中的索引**
+[str_order()](stringr/str_order().md)按**字母**顺序排序，返回排序后的**元素在原始向量中的索引**
 
 - **替换**
 
-[str_replace()](str_replace().md) 替换字符串中满足正则表达式模式的**第一个匹配项**
+[str_replace()](stringr/str_replace().md) 替换字符串中满足正则表达式模式的**第一个匹配项**
 
-[str_replace_all()](str_replace_all().md)替换字符串中满足正则表达式模式的**所有匹配项**
+[str_replace_all()](stringr/str_replace_all().md)替换字符串中满足正则表达式模式的**所有匹配项**
 
 大小写替换：
 
-[str_to_lower()](str_to_lower().md)将字符串转换为小写形式
+[str_to_lower()](stringr/str_to_lower().md)将字符串转换为小写形式
 
 str_to_upper()转为大写
   
 - **字符串拆分：**  
-[str_wrap()](str_wrap().md)在**指定的列宽度**内将字符串拆分成**多行**
+[str_wrap()](stringr/str_wrap().md)在**指定的列宽度**内将字符串拆分成**多行**
 
-[str_split()](str_split().md) 按**正则表达式表示分隔符**将字符串拆分为子串
+[str_split()](stringr/str_split().md) 按**正则表达式表示分隔符**将字符串拆分为子串
 
-[str_split_fixed()](str_split_fixed().md)正则表达式表示分隔符，讲字符串**拆分为到固定数量为止**，不足补空值
+[str_split_fixed()](stringr/str_split_fixed().md)正则表达式表示分隔符，讲字符串**拆分为到固定数量为止**，不足补空值
 
 #### 查
 
 - **提取**
 
-[str_extract()](str_extract().md)提取与**指定模式匹配的部分**，而**非**匹配上的字符串子集！如ab，匹配ab
+[str_extract()](stringr/str_extract().md)提取与**指定模式匹配的部分**，而**非**匹配上的字符串子集！如ab，匹配ab
 
-[str_extract_all](str_extract_all.md)提取字符串中**所有**匹配某个模式的部分，而**非**只输出一个，结果每个**元素都是一个字符串向量**
+[str_extract_all](stringr/str_extract_all.md)提取字符串中**所有**匹配某个模式的部分，而**非**只输出一个，结果每个**元素都是一个字符串向量**
 
-[str_subset()](str_subset().md)选出**匹配模式的子集**，如ab，匹配abc、abe
+[str_subset()](stringr/str_subset().md)选出**匹配模式的子集**，如ab，匹配abc、abe
 
-[str_sub()](str_sub().md) 从字符向量中筛选出**包含指定模式的元素**
+[str_sub()](stringr/str_sub().md) 从字符向量中筛选出**包含指定模式的元素**
 
 - **匹配检测**
 
-[str_view()](str_view().md)查看字符串中**指定模式的第一个匹配项**，以及匹配项的起始和终止位置，也可不显示位置 **？？？** GPT回复的有问题！
+[str_view()](stringr/str_view().md)查看字符串中**指定模式的第一个匹配项**，以及匹配项的起始和终止位置，也可不显示位置 **？？？** GPT回复的有问题！
 
-[str_view_all()](str_view_all().md)同上，但所有匹配项
+[str_view_all()](stringr/str_view_all().md)同上，但所有匹配项
 
-[str_locate()](str_locate().md)返回字符串中根据匹配模式匹配到的**子集的起始位置**
+[str_locate()](stringr/str_locate().md)返回字符串中根据匹配模式匹配到的**子集的起始位置**
 
-[str_locate_all()](str_locate_all().md)返回字符串中**所有**匹配模式的起始位置。
+[str_locate_all()](stringr/str_locate_all().md)返回字符串中**所有**匹配模式的起始位置。
 
-[str_detect()](str_detect().md)匹配检测，输出**逻辑值**，结合sum、mean函数效果更佳
+[str_detect()](stringr/str_detect().md)匹配检测，输出**逻辑值**，结合sum、mean函数效果更佳
 
 ### 通配符
 在正则表达式中，有许多特殊的匹配符号用于指定模式的匹配规则。以下是一些常见的匹配符号及其含义：
