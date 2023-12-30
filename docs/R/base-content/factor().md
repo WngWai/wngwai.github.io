@@ -7,6 +7,7 @@ factor(x, levels, labels = levels, exclude = NA, ordered = is.ordered(x))
 
 **参数**：
 - `x`：要转换为因子的向量或数据。
+
 - `levels`：指定**因子的水平**（levels）。可以是一个向量，表示因子的水平值，对应于原始向量`vector`的**唯一值**。；或者是一个整数，表示要将`x`的唯一值作为水平值。
 - `labels`：指定因子水平的标签。可以是一个向量，表示每个水平的标签；或者是一个函数，用于计算标签。
 - `exclude`：要排除的值，不包括在因子中。默认为NA。

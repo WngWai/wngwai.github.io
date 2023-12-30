@@ -7,6 +7,7 @@ filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 [select()](dplyr/select().md) 按照**指定列**，形成新的数据框
 
 [select_if()](dplyr/select_if().md)选择满足**特定条件的列**
+
 ### 对行/列数据进行操作
 [arrange()](dplyr/arrange().md) 对df中行数据按**指定列中数据进行重新排序**
 
@@ -17,7 +18,7 @@ filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 [sort()](base-content/sort().md) 对元素进行排序，内置函数
 
 
-[mutate()](dplyr/mutate().md) **创建或修改**新的列（变量），配上[across()](dplyr/across().md)在多个列上应用相同的变换或统计函数
+[mutate()](dplyr/mutate().md) 根据旧列添加新列，或者替换旧列数，配上[across()](dplyr/across().md)在多个列上应用相同的变换或统计函数
 
 [transmute()](dplyr/transmute().md) 只**保留新列**
 
@@ -46,7 +47,7 @@ filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 
 [count()](dplyr/count().md)计算**唯一值**出现**次数**，跟python不同
 
-[n_distinct()](dplyr/n_distinct().md)计算**唯一值数量**，注意唯一值数量指种类，跟上面的唯一值次数指频数不同
+[n_distinct()](dplyr/n_distinct().md)计算**种类数**，跟上面的唯一值次数指频数不同
 
 ## 处理关系数据
 [tribble()](dplyr/tribble().md) 创建**小规模的示例数据框**，大规模用df数据框

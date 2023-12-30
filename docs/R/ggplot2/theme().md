@@ -9,8 +9,12 @@ theme(...)
 在具体使用中逐步补充！
 **常用参数**：
 以下是`theme()`函数中常用的参数（不完全列表）：
-- `axis.text`: **轴标签**的样式。axis.text.x修改 x 轴刻度标签，axis.text.y修改 y 轴刻度标签。
+- `axis.text`: **轴标签**的**样式**。axis.text.x修改 x 轴刻度标签，axis.text.y修改 y 轴刻度标签。
+axis.text.x = element_text(angle = 90)，本身是x的标签样式是横着的，旋转90度，变成竖的。能不能将具体的字符保持横着（歪着头看很费劲）？？？
+![Pasted image 20231226170320](attachments/Pasted%20image%2020231226170320.png)
+
 - `axis.title`: **轴标题**的样式。axis.title.x修改 x 轴标题，axis.title.y修改 y 轴标题。
+
 - `axis.ticks`: **轴刻度线和刻度标签**的样式，axis.ticks.x修改 x 轴刻度线，axis.ticks.y修改 y 轴刻度线。
 
 - `legend.title`: **图例标题**的样式。
@@ -30,6 +34,9 @@ p + theme(
   panel.grid.major = element_line(color = "red", size = 2, linetype = "dashed", lineend = "round")
 )
 ```
+
+
+
 - `plot.background`: 整个**图形的背景**样式。
 - `plot.title`: **图形标题**的样式。
 - `plot.subtitle`: 修改**图形副标题**的外观。
@@ -89,6 +96,8 @@ p <- p + theme(
 print(p)
 ```
 
+
+## 样式函数
 ### element_rect()矩形元素（如图例背景、面板背景等）的样式
 在`ggplot2`中，`theme()`函数用于自定义绘图的外观和样式。`element_rect()`函数是`theme()`函数中的一个子函数，用于设置**矩形元素的样式**，如图例背景、面板背景等。下面是一些常用的`element_rect()`函数的参数及其详细介绍和示例：
 1. `fill`: 设置矩形填充的颜色。

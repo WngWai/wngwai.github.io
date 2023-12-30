@@ -1,6 +1,6 @@
 在R语言中，`glm()`函数是用于**拟合广义线性模型**的内置函数。
 
-![[Pasted image 20231122105019.png]]
+![Pasted image 20231122105019](attachments/Pasted%20image%2020231122105019.png)
 
 **函数定义**：
 ```R

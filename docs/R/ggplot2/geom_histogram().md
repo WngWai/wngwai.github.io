@@ -19,7 +19,7 @@ geom_histogram(mapping = NULL, data = NULL, stat = "bin", position = "stack", ..
 
 - `position`：柱状图的放置方式。可以是"stack"（默认，堆叠显示）或"dodge"（并列显示）。
 
-- `binwidth`：指定柱**状图的宽度**，用于控制分组的粒度。组距，组距越小，
+- `binwidth`：指定柱状图的宽度，就是**组距**，用于控制分组的粒度。
 
 - `bins`：指定**柱状图的数量**，用于控制**分组的个数**。
 
@@ -58,10 +58,11 @@ ggplot(data, aes(x = value)) +
 
 ### 柱状图和直方图的区别
 bar chart柱状图：数据不连续，有间隔；
+
 Histogram直方图：数据连续，无间隔。
 ![400](attachments/Pasted%20image%2020231006092816.png)
 
-### 设置直方图初始值
+### 设置直方图相关参数
 [scale_x_continuous()](scale_x_continuous().md) 限制了坐标轴的范围，但分组还是默认分组
 ```R
 # input data
@@ -75,7 +76,7 @@ ggplot(df_ppg) +
 ![Pasted image 20231108201222](attachments/Pasted%20image%2020231108201222.png)
 
 
-把x轴的坐标和geom_histogram()中的组距、组数限制下，发现默认分组起始组是11-13，而非10-12！
+把x轴的坐标和geom_histogram()中的组距、组数限制下，发现默认分组起始组是11-13，而非10-12！想要处理为10-12还是得转换为因子型。
 ```R
 # input data
 df_ppg <- read.csv("./data/NBAPlayerPts.csv")
@@ -88,3 +89,23 @@ ggplot(df_ppg) +
 ```
 
 ![Pasted image 20231108224752](attachments/Pasted%20image%2020231108224752.png)
+
+### 将连续型变量离散化，求频率
+个人的方法，老师的方法详看[table()](../base-content/table().md)中的子标题内容。
+
+```R
+# create a factor
+breaks <- seq(10, 30, by = 2)
+df_ppg_fre <- df_ppg %>%
+  mutate(PPG_Group = cut(PPG, breaks = breaks,include.lowest = TRUE)) %>% 
+  group_by(PPG_Group) %>% 
+  summarise(PPG_Group_count = n(), .groups = "drop")
+
+# plot a bar gram
+df_ppg_fre %>% 
+  ggplot() +
+  geom_bar(aes(x = PPG_Group, y = PPG_Group_count), stat = "identity") +
+  scale_y_continuous(breaks = seq(0,20))
+```
+
+![Pasted image 20231227093246](attachments/Pasted%20image%2020231227093246.png)

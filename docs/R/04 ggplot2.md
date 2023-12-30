@@ -1,4 +1,5 @@
 [ggplot2作图教程](https://zhuanlan.zhihu.com/p/370223674)
+
 - 数据dataset：作图用的原始数据；
 
 - 美学 aes(): 几何或者统计对象的美学，比如位置，颜色，大小，形状等；
@@ -52,11 +53,11 @@
 [stat_function()](ggplot2/stat_function().md)绘制自定义或匿名函数的曲线，通常与其他图层函数一起使用
 
 ### 辅助显示层
-[theme()](ggplot2/theme().md): 设置图形的主题，包括背景、标题、轴标签、图例等的外观和样式。
+[theme()](ggplot2/theme().md)设置图形的主题，包括背景、标题、轴标签、图例等的**外观和样式**，美化作用
 
-[labs()](ggplot2/labs().md): 设置图形的**标签**，包括标题、轴标签、图例标题等。
+[labs()](ggplot2/labs().md)设置图形的**标签**，包括标题、轴标签、图例标题等。
 
-[scale_x_continuous()](ggplot2/scale_x_continuous().md) 调整图形的x轴刻度和标签
+[scale_x_continuous()](ggplot2/scale_x_continuous().md) 调整图形的x轴**刻度和修改标签文本**
 
 [scale_y_continuous()](ggplot2/scale_y_continuous().md)调整图形的y轴刻度和标签
 

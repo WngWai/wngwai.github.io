@@ -1,8 +1,11 @@
 >[Obsidian](https://obsidian.md/)黑曜石官网
+>
 >[Obsidian英文论坛](https://forum.obsidian.md/)
+>
 >[Obsidian中文论坛](https://forum-zh.obsidian.md/)
 >
 >[内网安装包](https://thoughts.teambition.com/share/62a131711a6baa00416a79d3#title=Obsidian_%E5%AE%89%E8%A3%85%E5%8C%85)
+>
 >[内网插件](https://ob.pory.app/)
 
 - 号称第二大脑

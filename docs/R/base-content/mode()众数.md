@@ -1,9 +1,41 @@
 在 R 语言中，没有内置函数直接计算众数（mode），因为众数不像均值或中位数那样是基本的统计量。众数是数据集中出现次数最多的值。但是，你可以用几种方法来计算众数。
 
-
 ### 单个众数的情况
-一种简单的方法是使用 `table()` 函数来构建频率表，然后使用 `which.max()` 函数找到最大值对应的索引，像这样：
+一种简单的方法是使用 `table()` 函数来构建**频率表**（因子类型？？？），然后使用 `which.max()` 函数找到最大值**对应的索引**，像这样：
+1，推荐
+```R
+names(which.max(table(data_q1$viewers))
+```
 
+```R
+d <- c(4,5,3,1,6,7,8,9,11,12,32,1,3,4,5,5)
+
+table(d) # 生成频率表，带有向量名和对应频率值
+which.max(table(d)) # 上面是名称5，下面最大频率对应的索引值4
+names(which.max(table(d))) # 取名称
+
+names(table(d))
+```
+
+![Pasted image 20231226164828](attachments/Pasted%20image%2020231226164828.png)
+
+```R
+d <- c(2,1,3,4,5,6,7,8,9,0,11,12,32,1,3,4)
+
+table(d) # 生成频率表，带有向量名和对应频率值
+which.max(table(d)) # 上面是名称1，下面最大频率对应的索引值2
+names(which.max(table(d))) 
+
+names(table(d))
+```
+
+![Pasted image 20231226131407](attachments/Pasted%20image%2020231226131407.png)
+
+
+
+
+
+2，
 ```r
 # 定义一个计算众数的函数
 Mode <- function(x) {

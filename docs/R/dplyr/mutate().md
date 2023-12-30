@@ -47,7 +47,6 @@ print(df)
 
 
 ### 关于其中的function函数
-
 这个就可以。也是将x当作向量处理！
 ```R
 get_one <- function(x) {
