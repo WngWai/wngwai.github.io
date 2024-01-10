@@ -6,6 +6,7 @@
 ```R
 geom_histogram(mapping = NULL, data = NULL, stat = "bin", position = "stack", ..., binwidth = NULL, bins = NULL, na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)
 ```
+
 **参数**：
 - `mapping`：一个映射（aesthetic mapping）对象，用于映射数据变量到图形属性的**aes()函数或aes()函数的参数**。
 

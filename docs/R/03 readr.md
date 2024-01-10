@@ -1,15 +1,15 @@
 ### 读取数据文件
+
 [read_csv()](readr/read_csv().md) 读取csv文件
 
-[read_excel()](readr/read_excel().md) 读取excel文件
+[readxl：：read_excel()](readxl：：read_excel().md) 读取excel文件
 
 ---
 ### 写入数据文件
+
 [write_csv()](readr/write_csv().md)写入csv文件
 
 数据读取和解析：
-
-- `read_csv()`: 读取逗号分隔的CSV文件。
 
 - `read_tsv()`: 读取制表符分隔的文本文件。
 
@@ -24,8 +24,6 @@
 - `parse_datetime()`: 解析日期和时间字符串为`POSIXct`对象。
 
 数据写入：
-
-- `write_csv()`: 将数据写入逗号分隔的CSV文件。
 
 - `write_tsv()`: 将数据写入制表符分隔的文本文件。
 

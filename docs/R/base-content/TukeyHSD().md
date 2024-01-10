@@ -1,8 +1,10 @@
 在 R 语言中，`TukeyHSD()` 函数用于进行 Tukey's Honestly Significant Difference (HSD) 检验，用于比较多个组之间的均值差异。它**基于方差分析（ANOVA）的结果，提供了一种多重比较的方法**。下面是对 `TukeyHSD()` 函数的参数进行详细介绍和举例：
+
 **函数语法：**
 ```R
 TukeyHSD(aov_result, which = "means", conf.level = 0.95)
 ```
+
 **参数说明：**
 - `aov_result`：一个方差分析对象，通常是通过 `aov()` 函数得到的结果。
 - `which`：一个字符向量，表示要计算的比较类型。可以是 "means"（默认值），表示计算均值之间的差异；也可以是 "fitted"，表示计算拟合值之间的差异。

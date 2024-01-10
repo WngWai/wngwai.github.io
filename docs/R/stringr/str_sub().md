@@ -1,45 +1,46 @@
-在 R 语言中，`str_subset()` 函数属于 `stringr` 包，用于从字符向量中筛选出包含指定模式的元素。以下是关于 `str_subset()` 函数的基本信息：
+在 R 语言中，`str_sub()` 函数属于 `stringr` 包，用于**提取或替换字符串中的子串**。
+```R
+library(stringr)
+# 构造一个字符串向量
+c <- c("hello world", "I am a string", "helo-word", "you are_you")
+# 用str_sub()函数截取字符串向量
+str_sub(c, 1, 5)
 
-### `str_subset` 函数概述：
-
-**功能：** 从字符向量中筛选出包含指定模式的元素。
-
-**所属包：** `str_subset()` 函数属于 `stringr` 包，可以通过 `tidyverse` 加载。
+输出：
+[1] "hello" "I am " "helo-" "you a"
+```
+对字符串向量也适用！
 
 **定义：**
-```R
-str_subset(string, pattern)
+```r
+stringr::str_sub(string, start = 1, end = -1)
 ```
 
-### 参数介绍：
+**参数介绍：**
+- `string`：要操作的字符串。
 
-- **`string`：** 要进行筛选的字符向量。
+- `start`：子串的起始位置，可以是正整数或负整数。正整数表示从字符串的起始位置开始，负整数表示从字符串的末尾位置开始。
 
-- **`pattern`：** 一个正则表达式模式，用于匹配要筛选的内容。
+- `end`：子串的结束位置，可以是正整数或负整数。正整数表示从字符串的起始位置开始，负整数表示从字符串的末尾位置开始。
 
-### 示例：
+**功能：**
+提取字符串中指定位置范围的子串。
 
-```R
-# 安装并加载tidyverse包
-install.packages("tidyverse")
-library(tidyverse)
+**举例：**
+```r
+library(stringr)
 
-# 使用str_subset筛选包含数字的元素
-text_vector <- c("apple", "123orange", "banana456", "grape")
+# 使用 str_sub() 提取字符串的子串
+result <- str_sub("hello world", start = 1, end = 5)
 
-# 筛选包含数字的元素
-result <- str_subset(text_vector, "\\d")
-
-# 显示结果
+# 打印结果
 print(result)
 ```
 
-### 输出：
-
-在上述示例中，`str_subset()` 函数用于从字符向量中筛选出包含数字的元素。输出结果将是一个新的字符向量，其中包含原始向量中包含数字的元素：
-
+**输出：**
 ```
-[1] "123orange" "banana456"
+[1] "hello"
 ```
 
-这表示成功筛选出了包含数字的元素。如果需要筛选不包含指定模式的元素，可以使用 `str_subset()` 的反函数 `str_which()`。
+在这个例子中，`str_sub()` 函数被用于提取字符串 "hello world" 中位置从 1 到 5 的子串，即 "hello"。这个函数的使用方式允许从字符串的起始位置或末尾位置开始提取子串。
+

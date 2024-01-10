@@ -1,5 +1,21 @@
 在R语言中，`str_subset()`函数是字符串处理包`stringr`中的一个函数，用于**从字符向量中选择匹配指定模式的子集**。
 
+```R
+library(stringr)
+
+# 从字符向量中选择匹配指定模式的子集
+subset1 <- str_subset(c("apple", "banana", "orange"), pattern = "a")
+print(subset1)  
+
+输出: "apple" "banana"
+
+subset2 <- str_subset(c("apple", "banana", "orange"), pattern = "z")
+print(subset2)  
+
+输出: character(0)
+
+```
+
 **函数定义**：
 ```R
 str_subset(string, pattern)
@@ -11,17 +27,6 @@ str_subset(string, pattern)
 
 - `pattern`：一个字符向量，包含要匹配的模式。
 
-```R
-library(stringr)
-
-# 从字符向量中选择匹配指定模式的子集
-subset1 <- str_subset(c("apple", "banana", "orange"), pattern = "a")
-print(subset1)  # 输出: "apple" "banana"
-
-subset2 <- str_subset(c("apple", "banana", "orange"), pattern = "z")
-print(subset2)  # 输出: character(0)
-
-```
 
 在上面的示例中，我们首先加载了`stringr`包，然后使用`str_subset()`函数从字符向量中选择匹配指定模式的子集。
 

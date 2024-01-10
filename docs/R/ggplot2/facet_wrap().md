@@ -4,16 +4,33 @@
 R语言ggplot笔记（三）：基础语法篇（下） - 柚子啊柚子的文章 - 知乎
 https://zhuanlan.zhihu.com/p/101877243
 
+如何使用 ggplot2 ？ - 心理统计联盟的回答 - 知乎
+https://www.zhihu.com/question/24779017/answer/3188530425
+
 ```R
-facet_wrap(~ variable, nrow = NULL, ncol = NULL, scales = "fixed", shrink = TRUE, labeller = "label_value", as.table = TRUE, switch = NULL, dir = "h", strip.position = "top")
+facet_wrap(facets, nrow = NULL, ncol = NULL, scales = "fixed", shrink = TRUE, labeller = "label_value", as.table = TRUE, switch = NULL, dir = "h", strip.position = "top")
 ```
 
-- `~ variable`：表示**用于分组的因子变量z**。它可以是单个变量，也可以是多个变量的组合。
-- `nrow`：表示子图的**行数**。
-- `ncol`：表示子图的**列数**。
-- `scales`：表示**是否在子图之间共享坐标轴**。默认为"fixed"，表示每个子图具有独立的坐标轴；如果设置为"free"，则子图之间的坐标轴可以不同。
+- `facets`：
+
+	vars()：vars(z1, z2)
+	   
+	 ~ variable：~ z1 + z2，经典表达式。表示**用于分组的因子变量z**。它可以是**单个**变量，也可以是**多个**变量的组合。
+
+	c(z1, z2)：也可用向量的形式
+
+- `nrow`：子图显示的**行数**。根据固定行数分布子图
+
+- `ncol`：子图显示的**列数**。根据固定列数分布子图
+
+同时指定子图的行、列不可靠！
+
+- `scales`：表示**是否在子图之间共享坐标轴**。默认为"fixed"，表示每个子图具有独立的坐标轴；如果设置为"free"，则子图之间的**坐标轴可以不同**。
+
 - `shrink`：表示是否根据子图的相对大小自动调整每个子图的大小。默认为`TRUE`。
+
 - `labeller`：用于设置子图标签的标签器。默认为"label_value"，表示使用因子变量的值作为标签。
+
 - `as.table`：表示是否将子图按照表格方式排列。默认为`TRUE`，表示按照表格方式排列。
 - `switch`：表示是否在子图之间进行交换以获得更好的布局。默认为`NULL`，表示不进行交换。
 - `dir`：表示子图的排列方向。可以是"h"（水平）或"v"（垂直）。默认为"h"。
@@ -39,22 +56,11 @@ ggplot(data, aes(x = x, y = y)) +
 
 在输出图中，数据被分为三个子图，每个子图对应一个不同的`group`值。通过`nrow`参数，我们设置每行显示两个子图。
 
-这个示例展示了如何使用`facet_wrap()`函数创建分组的子图。您可以根据需要调整参数来自定义子图的布局和样式。
 
+### 多因子
+```r
+g + facet_wrap(~ year + season, nrow = 4, scales = "free_x")
+# free_x是指x轴的量尺可以自由变化，而y轴保持不变
+```
 
-### facet_wrap()和facet_grid()的区别
-在R语言中的ggplot2包中，`facet_wrap()`和`facet_grid()`是用于创建多面板图的函数，它们的区别如下：
-1. `facet_wrap()`函数：
-   - `facet_wrap()`函数用于创建基于一个或多个变量的自动多面板图。
-   - 它将数据集按照指定的变量进行分组，并在每个分组上创建一个子图。
-   - 子图的排列方式可以是水平排列、垂直排列或网格排列。
-   - `facet_wrap()`函数的语法为：`facet_wrap(~ variable, nrow = x, ncol = y)`，其中`variable`是用于分组的变量，`nrow`和`ncol`是子图的行数和列数，可以根据需要进行调整。
-   - 通常用于创建较为灵活的多面板图，适用于变量较多或分组较复杂的情况。
-2. `facet_grid()`函数：
-   - `facet_grid()`函数用于创建基于两个或多个变量的网格多面板图。
-   - 它将数据集按照两个变量的组合进行分组，并在每个组合上创建一个子图。
-   - 子图的排列方式可以是水平排列、垂直排列或网格排列。
-   - `facet_grid()`函数的语法为：`facet_grid(variable1 ~ variable2, scales = "fixed")`，其中`variable1`和`variable2`是用于分组的变量，`scales`参数可选，用于设置坐标轴的刻度是否固定。
-   - 通常用于创建固定组合的多面板图，适用于分组较简单且需要固定刻度的情况。
-
-总结而言，`facet_wrap()`函数适用于创建基于一个或多个变量的自动多面板图，具有较大的**灵活性**；而`facet_grid()`函数适用于创建基于两个或多个变量的网格多面板图，具有较强的**固定性**。根据具体的数据集和需求，选择适合的函数来创建多面板图。
+![Pasted image 20240108092809](attachments/Pasted%20image%2020240108092809.png)

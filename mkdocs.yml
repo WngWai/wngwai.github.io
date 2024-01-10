@@ -22,11 +22,13 @@ nav:
     - Rstudio配置GitHub: "tool/Git"
     - R语言函数库:
       - 基础知识: "R/00 基础知识.md"
-      - 基础函数: "R/01 基础函数.md"
-      - readr: "R/02 readr.md"
-      - dplyr: "R/03 dplyr.md"
-      - ggplot2: "R/04 ggplot2.md"
-      - stringr: "R/05 stringr.md"
+      - 基础函数和数理统计: "R/01 基础函数和数理统计.md"
+      - 建模: "R/02 建模.md"
+      - readr: "R/03 readr.md"
+      - dplyr: "R/04 dplyr.md"
+      - ggplot2: "R/05 ggplot2.md"
+      - stringr: "R/06 stringr.md"
+      - 项目1-数据分析: "R/项目1-数据分析.md"      
   - MySQL:
     - mysql/index.md
     - MySQL基础篇: "mysql/MySQL.md"

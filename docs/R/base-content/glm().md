@@ -12,9 +12,11 @@ glm(formula, data, family = gaussian, subset, weights, na.action,
 
 **参数**：
 - `formula`：一个公式，指定了广义线性模型的形式。通常包含自变量和因变量的关系。
+
 - `data`：一个数据框，包含用于构建模型的所有变量。
+
 - `family`：一个描述误差结构和链接函数的对象。默认为高斯分布，即适用于普通线性回归。
-family = binomial 用于逻辑回归
+family = binomial 用于**逻辑回归**
 
 - `subset`：一个逻辑向量或表达式，用于指定用于拟合模型的子集观测。
 - `weights`：一个数值向量，用于为每个观测指定权重。

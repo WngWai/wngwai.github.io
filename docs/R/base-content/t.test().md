@@ -69,20 +69,21 @@ mean of x
 ```
 
 t.test()函数返回的结果列表的组成内容如下：
-1. statistic：统计量的值，例如t值、z值等。
-2. parameter：自由度，即用于计算统计量的参与观测值的数量。
-3. p.value：双侧检验的p值。
-4. conf.int：置信区间的上下限值。
+1. **statistic**：统计量的值，例如t值、z值等。
+2. **parameter**：自由度，即用于计算统计量的参与观测值的数量。
+3. **p.value**：双侧检验的p值。
+4. **conf.int**：置信区间的上下限值。
 ```R
 t.test(data_q4$age)[4](4)
 # 或
 t.test(data_q4$age)$conf.int
 
+# 输出
 [1] 30 31
 attr(,"conf.level")
 [1] 0.95
 ```
-5. estimate：估计的均值差或效应大小。
+5. **estimate**：估计的均值差或效应大小。
 6. null.value：零假设的均值差或效应大小。
 7. alternative：备择假设的描述。
 8. method：所使用的统计方法的描述。

@@ -1,11 +1,4 @@
 在R语言中，`str_detect()`函数是字符串处理包`stringr`中的一个函数，用于**检测字符串中是否存在指定的模式**。
-**函数定义**：
-```R
-str_detect(string, pattern)
-```
-**参数**：
-- `string`：一个字符向量，包含要检测的字符串。
-- `pattern`：一个字符向量，包含要匹配的模式。
 
 ```R
 library(stringr)
@@ -17,6 +10,8 @@ print(result1)  # 输出: TRUE
 result2 <- str_detect("Hello World", pattern = "z")
 print(result2)  # 输出: FALSE
 
+
+# 字符串向量
 x <- c("apple", "banana", "pear")
 str_detect(x, "e")
 #> [1] TRUE FALSE TRUE
@@ -29,6 +24,17 @@ no_vowels_2 <- str_detect(words, "^[^aeiou]+$")
 identical(no_vowels_1, no_vowels_2)
 #> [1] TRUE
 ```
+
+**函数定义**：
+```R
+str_detect(string, pattern)
+```
+**参数**：
+- `string`：一个字符向量，包含要检测的字符串。
+
+- `pattern`：一个字符向量，包含要匹配的模式。
+
+
 
 在上面的示例中，我们首先加载了`stringr`包，然后使用`str_detect()`函数检测字符串中是否存在指定的模式。
 

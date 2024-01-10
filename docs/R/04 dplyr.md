@@ -4,6 +4,8 @@
 
 filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 
+slice()根据指定行数，选择行？
+
 [select()](dplyr/select().md) 按照**指定列**，形成新的数据框
 
 [select_if()](dplyr/select_if().md)选择满足**特定条件的列**
@@ -24,8 +26,6 @@ filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 
 
 [lag()](dplyr/lag().md) 和[lead()](dplyr/lead().md)**偏移**函数，后移和前移
-
-[distinct()](dplyr/distinct().md) **去除重复观测值**
 
 ## 分组统计
 [group_by()](dplyr/group_by().md) 指定列进行**分组**，分组后再用summarize()后会**保留**分组列
@@ -50,7 +50,6 @@ filter_if()选择满足**特定条件的行**,跟filter()的差别是？
 [n_distinct()](dplyr/n_distinct().md)计算**种类数**，跟上面的唯一值次数指频数不同
 
 ## 处理关系数据
-[tribble()](dplyr/tribble().md) 创建**小规模的示例数据框**，大规模用df数据框
 
 [inner_join()](dplyr/inner_join().md) 内连接
 
@@ -66,9 +65,3 @@ right_join()右连接
 
 [merge()](base-content/merge().md) 内置函数，不建议用
 
-## 抽样
-[slice_sample()](dplyr/slice_sample().md) 从df中进行随机抽样
-
-[sample_n()](dplyr/sample_n().md)从数据集中随机抽取观察值
-
-[sample_frac()](dplyr/sample_frac().md)随机抽取指定比例的观察值

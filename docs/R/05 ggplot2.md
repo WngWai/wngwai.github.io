@@ -89,9 +89,9 @@
 	coord_map()
 
 ### 分面绘图
-[facet_grid()](ggplot2/facet_grid().md) 基于一个因子进行分面，如z，分割x~y
+[facet_grid()](ggplot2/facet_grid().md) 基于x、y因子进行分面，如单x，单y，或x和y
 
-[facet_wrap()](ggplot2/facet_wrap().md) 基于一个或多个因子分面，如z1、z2...，分割x~y
+[facet_wrap()](ggplot2/facet_wrap().md) 基于x、y、甚至**额外z**因子分面，如z1、z2...，分割x~y
 
 ---
 ### 统计
