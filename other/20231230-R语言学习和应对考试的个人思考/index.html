@@ -1,0 +1,2308 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WngWai的简易博客">
+      
+      
+        <meta name="author" content="WngWai">
+      
+      
+        <link rel="canonical" href="https://wngwai.github.io/other/20231230-R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%BA%94%E5%AF%B9%E8%80%83%E8%AF%95%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>R语言学习和应对考试的个人思考 - WngWai的简易博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#r" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="WngWai的简易博客" class="md-header__button md-logo" aria-label="WngWai的简易博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WngWai的简易博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R语言学习和应对考试的个人思考
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WngWai/wngwai.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wngwai.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  相关分享
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../R/" class="md-tabs__link">
+          
+  
+    
+  
+  R语言
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mysql/" class="md-tabs__link">
+          
+  
+    
+  
+  MySQL
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ML/" class="md-tabs__link">
+          
+  
+    
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../life/" class="md-tabs__link">
+          
+  
+    
+  
+  生活
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WngWai的简易博客" class="md-nav__button md-logo" aria-label="WngWai的简易博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    WngWai的简易博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WngWai/wngwai.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wngwai.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    相关分享
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            相关分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    工具分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            工具分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool/Obsidian" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obsidian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    个人分享
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            个人分享
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20231230-R语言学习和应对考试的个人思考" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231230班级宣讲
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    链接
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            链接
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%9B%B8%E5%85%B3%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    同学过往分享
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Link/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    推荐视频
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    外网和AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../R/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    R语言
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            R语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool/Git" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rstudio配置GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R语言函数库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            R语言函数库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/00%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础知识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/01%20%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础函数和数理统计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/02%20%E5%BB%BA%E6%A8%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    建模
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/03%20readr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    readr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/04%20dplyr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dplyr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/05%20ggplot2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ggplot2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/06%20stringr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    stringr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/%E9%A1%B9%E7%9B%AE1-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    项目1-数据分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mysql/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/MySQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MySQL基础篇
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ML/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ML/ML-Link/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    推荐视频
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../life/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    生活
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            生活
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../life/food-records/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    吃不够
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../life/hotel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    睡不醒
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../life/predict/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    明天会下雨
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、R语言学习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、R语言学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，基础
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1，基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1，数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2，数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3，逻辑语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4，常用函数和自定义函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，包packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2，包packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1，内置包
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2，第三方包：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3，算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3，算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1，算法思想
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2，机器、深度学习算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、概率论与数理统计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、概率论与数理统计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，假设检验的核心概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，三大抽样分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、应对考试
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、应对考试">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1r" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，R语言、数据思维与商业统计作业框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，Copilot的辅助
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、关于Copilot
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、关于Copilot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，Copilot的注册使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2aigc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，AIGC浅谈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2，AIGC浅谈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1，什么是生成式AI？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2，应用举例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3，小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      五、其他
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、其他">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1python" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，关于python的应用浅谈：追求生产力
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1，关于python的应用浅谈：追求生产力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11python" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1，python（蟒蛇）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2，使用的思路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3，一定要结合个人业务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，个人思考
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2，个人思考">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1，个人的学习建议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2，（后面会删除）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2，（后面会删除）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1，动力不能只来源于压力：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2，如何培养兴趣？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3，处理压力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4，最后的建议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束语
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/WngWai/wngwai.github.io/blob/main/docs/other/20231230-R语言学习和应对考试的个人思考.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>R语言学习和应对考试的个人思考</h1>
+
+<p><img alt="R语言学习和应对考试的个人思路" src="../attachments/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%BA%94%E5%AF%B9%E8%80%83%E8%AF%95%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%B7%AF.png" /></p>
+<h2 id="r">一、R语言学习<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
+<h3 id="1">1，基础<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="11">1.1，数据类型<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
+<p>聚焦于<strong>元素</strong>。</p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231226153919.png" /></p>
+<p><strong>概念：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1，整型</span>
+没有小数部分的数据。
+
+<span class="c1"># 2，浮点型</span>
+带小数位的数据。跟整型的差别在于存储单元的分配上。
+
+<span class="c1"># 3，字符串</span>
+字母、汉字、数字、符号等。
+
+<span class="c1"># 4，布尔值，True（其他，一般为1），False（0）</span>
+逻辑运算（<span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="p">,</span><span class="o">==</span><span class="p">,</span><span class="o">&amp;</span><span class="p">,</span><span class="o">|</span><span class="p">,</span><span class="o">~</span>），常见于条件判别。
+
+<span class="c1"># 5，特殊值</span>
+<span class="n">`NA`</span>（<span class="n">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">valueble</span>）<span class="p">,</span><span class="n">`NULL`</span><span class="p">,</span><span class="n">`NaN`</span><span class="p">,</span><span class="n">`Inf/-Inf`</span>
+</code></pre></div>
+<p><strong>实践中的应用</strong>：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 例：字符串</span>
+<span class="nf">rename</span><span class="p">(</span><span class="n">viewers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">`Viewers (millions)`</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="n">air_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">`Air Date`</span><span class="p">)</span>
+<span class="nf">rename</span><span class="p">(</span><span class="n">viewers1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewers</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="n">air_date1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">air_date1</span><span class="p">)</span>
+<span class="c1"># (1)作为变量直接用变量名表示，如果放在列表、向量中，需要加双引号，函数会解析为变量名；</span>
+<span class="c1"># (2)带有特殊符号的变量，如带有空格需要加单引号或双引以表便编辑器识别为变量名。</span>
+
+
+<span class="c1"># 例：布尔值</span>
+<span class="nf">sum</span><span class="p">(</span><span class="kc">...</span><span class="o">==</span><span class="kc">...</span><span class="p">)</span><span class="w"> </span><span class="c1">#逻辑运算求和技巧</span>
+<span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="n">is.character</span><span class="p">,</span><span class="w"> </span><span class="n">as.factor</span><span class="p">))</span><span class="w"> </span><span class="c1">#类型转换</span>
+<span class="c1"># 强烈建议以后遇到逻辑运算时大脑默认将结果转换为FALSE（0），TRUE（1），有助于理解和运用复杂的逻辑运算</span>
+
+
+<span class="c1"># 例：特殊值</span>
+<span class="nf">sum</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span><span class="n">na.rm</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="c1"># Na缺失值默认是不排除的，具体视情况而定</span>
+</code></pre></div>
+<h4 id="12">1.2，数据结构<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<p>聚焦于<strong>元素间的关系</strong>，为了提高存储和运算效率。</p>
+<p><strong>概念：</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># 1，向量</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="c1"># 经常写的向量</span>
+
+
+<span class="c1"># 2，数据框：简单理解为excel表格</span>
+<span class="nf">data.frame</span><span class="p">(</span>
+<span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Charlie&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">)</span>
+<span class="n">height</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">165</span><span class="p">,</span><span class="w"> </span><span class="m">175</span><span class="p">,</span><span class="w"> </span><span class="m">185</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+其他数据结构可以类比向量和数据框。</p>
+<p><strong>实践中的应用</strong>：</p>
+<p>为什么唯独强调向量和数据框？数据分析中太常用了。你可能不知道向量和数据框，但你一定经常写这样的代码。</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&#39;C:/./.csv&#39;</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">$</span><span class="n">column1</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="n">geom_</span><span class="o">*</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</code></pre></div>
+<p>我们处理的最多的就是就是<strong>结构化数据</strong>(Excel表格)，这类数据<strong>从excel导入</strong>后一般都存在了数据框中，然后我们再进行处理。</p>
+<h4 id="13">1.3，逻辑语句<a class="headerlink" href="#13" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1，判断语句</span>
+<span class="nf">if</span><span class="p">(</span>条件<span class="p">){</span>
+
+<span class="p">}</span>
+
+<span class="c1"># 2，循环语句</span>
+<span class="nf">for</span><span class="p">(</span>条件<span class="p">){</span>
+
+<span class="p">}</span>
+
+<span class="c1"># 3，条件语句</span>
+（<span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="p">,</span><span class="o">==</span><span class="p">,</span><span class="o">&amp;</span><span class="p">,</span><span class="o">|</span><span class="p">,</span><span class="o">~</span>）
+</code></pre></div>
+<p>遇到条件语句转为布尔值，FALSE为0，True为1。</p>
+<h4 id="14">1.4，常用函数和自定义函数<a class="headerlink" href="#14" title="Permanent link">&para;</a></h4>
+<p>（1）<strong>常用函数</strong>：</p>
+<ul>
+<li>与数据类型相关，以博客内容为例</li>
+</ul>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231227203436.png" /></p>
+<ul>
+<li>
+<p>与数据结构相关，以博客内容为例</p>
+<p><a href="https://wngwai.github.io/R/00%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">数据框</a>为例：主要的就是<strong>数据框的创建、生成新的数据框、属性、索引、数据框的操作（增、删、改、查）</strong>。</p>
+</li>
+</ul>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231227203703.png" /></p>
+<p><strong>实践中的应用</strong>：
+<div class="highlight"><pre><span></span><code><span class="c1"># 修改数据结构中某列的数据类型</span>
+<span class="n">data</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="n">is.character</span><span class="p">,</span><span class="w"> </span><span class="n">as.factor</span><span class="p">))</span><span class="w"> </span>
+</code></pre></div></p>
+<p>（2）<strong>自定义函数</strong>：
+<div class="highlight"><pre><span></span><code><span class="c1"># 1，function函数定义</span>
+<span class="n">function</span>（）
+
+<span class="c1"># 2，~定义匿名函数</span>
+定义简单函数
+</code></pre></div></p>
+<p><strong>实践中的应用</strong>：
+<div class="highlight"><pre><span></span><code><span class="c1"># 1，function</span>
+<span class="n">squre1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="w">  </span><span class="n">x</span><span class="o">^</span><span class="m">2</span>
+<span class="p">}</span><span class="w"> </span><span class="c1"># 默认返回最后一行计算结果</span>
+<span class="n">squre1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+<span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="o">^</span><span class="m">2</span>
+<span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">a</span><span class="w">  </span>
+<span class="p">}</span><span class="w"> </span><span class="c1"># 通过return，指定返回内容</span>
+
+<span class="c1"># 2，匿名函数</span>
+<span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="w"> </span><span class="n">squrel</span><span class="p">)</span>
+
+<span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="n">.x</span><span class="o">^</span><span class="n">.x</span><span class="p">)</span><span class="w"> </span><span class="c1"># .x为占位符，逐元素计算</span>
+</code></pre></div></p>
+<h3 id="2packages">2，包packages<a class="headerlink" href="#2packages" title="Permanent link">&para;</a></h3>
+<p>为了专门实现<strong>某一类功能</strong>，将各种相关函数打包放在了一起。就像我们为了避免写重复代码一样，应用function()定义常用功能函数。这种借鉴他人成果避免重复 <strong>“造轮子”</strong> 的 <strong>“拿来主义”</strong> 贯穿编程始终。</p>
+<h4 id="21">2.1，内置包<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
+<p><a href="https://wngwai.github.io/R/01%20%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/">内置函数举例</a></p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231227205626.png" /></p>
+<p>内置函数包往往都是常用的基础功能，但要实现复杂的功能了？</p>
+<h4 id="22">2.2，第三方包：<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
+<p>随着需求越来越多，内置包内已经无法满足，于是<strong>非官方的人员</strong>编辑了各种各样的函数包，以满足自身需要。
+<br><br></p>
+<p>有些包非常好用，比如R中著名的<strong>tidyverse</strong>。</p>
+<p>tidyverse是一个R语言中的<strong>数据科学和数据处理工具集合</strong>，由一系列互相依赖的第三方包组成，包括<strong>dplyr、ggplot2、tidyr、readr</strong>等等。tidyverse的目标是提供一种一致且直观的数据处理方法，使得数据科学家和分析师能够更轻松地进行数据清洗、转换、可视化和建模等操作。
+<br><br></p>
+<p>我们每次<strong>install.packages()</strong> 都是从网上下载第三方包到本地软件中，因此下载一次后就不用重复下载，这也是Rstudio中写install.packages()报错的原因之一。</p>
+<p>使用时<strong>library()</strong> 告诉系统我们要调单这个包里的函数了，让它提前准备好，文件关闭后存在系统的包就又被“放回去了”。这就是为什么每个文件开头都要“配置环境”，先运行library()才能使用第三方包内的函数。</p>
+<h3 id="3">3，算法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>（计算机+数学）：核心目的节省计算资源、提高计算效率、得到精确结果等。</p>
+<h4 id="31">3.1，算法思想<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>回溯：动态规划中的应用。</p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231227213641.png" /></p>
+<h4 id="32">3.2，机器、深度学习算法<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
+<p><strong>（1）线性回归</strong></p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231227211209.png" /></p>
+<blockquote>
+<div class="arithmatex">\[\frac1m\sum_{i=1}^m(y_i-\hat{y}_i)^2\]</div>
+</blockquote>
+<p>核心目的：寻找一条直线方程，拟合坐标点，使得均方差损失函数最小。</p>
+<p>这里面Loss funtion就涉及到<strong>数学原理</strong>的应用。为什么不用<strong>绝对值误差</strong>？因为用均方差可以得到一条光滑的曲线，进而微分，在寻找最优解时实现高效的运算。</p>
+<p>（不要求掌握）关于最优解的具体计算，涉及到梯度下降算法（SDG），其中会涉及到<strong>回溯</strong>。</p>
+<p><strong>（2）AlexNet卷积神经网络</strong></p>
+<p>卷积神经网络(Convolutional Neural Networks, CNNs)算法在很大程度上推动了图像识别领域，特别是人脸识别技术的飞速发展。CNNs通过模仿人类视觉系统的处理方式，能够有效地提取和识别图像中的特征，使得它们在图像识别任务中取得了优异的性能。</p>
+<p>（AlaxNet网络）
+<img alt="500" src="../attachments/Pasted%20image%2020231229175439.png" /></p>
+<blockquote>
+<p><strong>AlexNet (2012)</strong>: 由Alex Krizhevsky等人开发的AlexNet在ILSVRC 2012中取得了压倒性的胜利，这标志着<code>深度学习在图像识别任务中的主导地位正式确立</code>。</p>
+</blockquote>
+<p><br></p>
+<p><strong>图像识别技术的快速发展大概源于</strong>：</p>
+<p>1，硬件的发展：以GPU为代表的硬件性能的提升；</p>
+<p>2，数据积累：深度数据化，且积累了不少数据；</p>
+<p>3，算法改进：更高效的算法。</p>
+<p>图像识别技术的发展促进面部识别、商品识别（电商网购）、自动驾驶（特斯拉、华为）的技术发展和应用。</p>
+<p>（28号的小米汽车技术发布会）
+<img alt="500" src="../attachments/Pasted%20image%2020231230092146.png" /></p>
+<p>这也就是我们后期会深入涉及到各种算法的原因，因为<strong>算法</strong>才是前沿发展的精华所在，也是<strong>效益</strong>的代名词！
+<br><br></p>
+<p>想要了解更多，关注学委分享的资料：</p>
+<p><a href="https://mp.weixin.qq.com/s/g90puUxYe_B9_W-Cd5p04w">学委的推荐的机器学习算法分类</a></p>
+<h2 id="_1">二、概率论与数理统计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>波波同学分享不少内容，在这里强烈推荐其中的概率论与数理统计、线性代数视频教程。</p>
+<p><a href="https://wngwai.github.io/other/Link/">https://wngwai.github.io/other/Link/</a></p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231230092424.png" /></p>
+<p>高数、线代、概率论与数理统计是机器学习、深度学习的基础知识，可以<strong>就着需要和空闲时间</strong>查漏补缺。</p>
+<p><strong>之后的课程</strong>：都会涉及到相关知识。</p>
+<table>
+<thead>
+<tr>
+<th>学期</th>
+<th>专业课程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>研一下学期</td>
+<td>《探索性数据分析与数据可视化》<br>《应用回归分析》</td>
+</tr>
+<tr>
+<td>研二上学期</td>
+<td>《机器学习与预测》<br>《实验设计与因果推断》</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>概率论与数理统计的内容非常多，我也有很多没有搞明白。这里只是简要介绍下我认为当前非常需要弄明白的核心概念。</p>
+<h3 id="1_1">1，假设检验的核心概念<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>以<strong>考试成绩</strong>为案例，假设某校的成绩满足正态分布，有学生1万人：</p>
+<p>（1）总体分布</p>
+<p>1万名学生的成绩分布情况。</p>
+<p><img alt="Pasted image 20231230150026" src="../attachments/Pasted%20image%2020231230150026.png" /></p>
+<p>（2）样本均值分布</p>
+<p>样本容量为100的<strong>样本分布</strong>情况：</p>
+<p><img alt="Pasted image 20231230150521" src="../attachments/Pasted%20image%2020231230150521.png" /></p>
+<p>随机抽取10000个样本，每个样本容量为100，将样本均值作为数据绘制的直方图就是<strong>样本均值分布</strong>：</p>
+<p><img alt="Pasted image 20231230151104" src="../attachments/Pasted%20image%2020231230151104.png" /></p>
+<p>根据<strong>中心极限定理</strong>，样本均值足够多下，<strong>样本均值分布</strong>呈现<strong>正态分布</strong>，<em>样本均值分布的均值</em> 与总体均值μ相等。</p>
+<p><img alt="Pasted image 20231230152212" src="../attachments/Pasted%20image%2020231230152212.png" /></p>
+<p><strong>接受域、拒绝域、置信区间</strong>都是在样本均值分布上看的。</p>
+<p>假设检验的核心思路就是<strong>小概率反证法</strong>，从总体中抽取一个样本，样本的均值x_bar只有非常小的概率落在了样本均值分布的两侧，这两侧所代表的抽样事件被称为<strong>极端情况</strong>。</p>
+<p>类似我连饮料的再来一瓶都没有中过，却中了彩票，要么我运气爆棚，要么我买了张假彩票（样本不来源总体），无论哪种情况，<strong>极端事件发生了，我们都认为这个样本不属于总体</strong>，这个样本中的数据可能来源于另一个学校，而我就是买到了一张假彩票。</p>
+<p>但<strong>会不会恰恰出现了极端情况</strong>，这个样本就是来源原总体？如同我买到了一真的中奖彩票了？会的，所以有α的的概率犯去真的错误，也就是我有5%（α=5%）的概率错过成为富一代的机会。</p>
+<p>（3）t分布</p>
+<p>其实到了上面那步我们就该结束了，例如再次抽样，样本均值出现在两端，我们就可以说这个样本中的成绩一样不是我们学校的。这跟我们的<strong>生活经验是相符合</strong>，我们根据小孩身高估计小孩年龄、根据工龄估计输入等，身高1.7m你会排除小孩的范畴，工资2500你不会认为工龄很长。</p>
+<p>但<strong>数学家没有止步于此</strong>，数学家想如果我不知道总体是什么分布，我该如果判这个样本是否代表极端情况发生？例如，我们不知道学校总体成绩分布情况，只有一个样本，只知道总体成绩的均值。</p>
+<p>通过将样本均值<strong>减去μ值（归一化）</strong>，<strong>除以标准误（去除单位影响）</strong>，将上面的<strong>样本均值分布</strong>中的数据转换过来，就得到<strong>t分布</strong>。然后数学家通过抽取不同事物的样本，计算t值，发现t分布存在共性，通过复杂的数学证明，证明了这种共性背后的科学性。同样的，中心极限定理，也是通过观察自然现象得到得结果。</p>
+<div class="arithmatex">\[t=\frac{\bar{x}-\mu}{\frac s{\sqrt{\mathrm{n}}}}\]</div>
+<p><img alt="Pasted image 20231230160518" src="../attachments/Pasted%20image%2020231230160518.png" /></p>
+<p><strong>t-value、p-value</strong>都是从t分布上看的。
+<br><br></p>
+<ul>
+<li>t（学生）分布的由来：</li>
+</ul>
+<p>Gosset在啤酒厂工作，啤酒花原料的品质也影响啤酒的口感，而确定啤酒花的质量又费时费力，我们当下会想到可以抽样检测，但当时是没有理论依据的，Gosset经过实验，得到了我们上面所说的<strong>样本均值分布</strong>的类似结果，可以判断极端差的情况。</p>
+<p><img alt="Pasted image 20231230161545" src="../attachments/Pasted%20image%2020231230161545.png" /></p>
+<p>但Gosset<strong>没有止步于此</strong>，他之后去了伦敦大学进修，通过一年的实验研究，发表了下面这篇论文（1908年），也就是我们现在称呼的<strong>t分布</strong>。啤酒厂为维持巨大的效益，避免竞争对手猜到t分布可以用到原料检测中，老板不想让Gosset署名发表，所以最后<strong>署名STUDENT</strong>。</p>
+<p><img alt="Pasted image 20231230162405" src="../attachments/Pasted%20image%2020231230162405.png" /></p>
+<p>这或许就是数学的魅力，数学家通过有限的认知揭示了普遍的规律，因为是最本质的规律，所以数学能在各个学科上都得到应用，如<strong>材料的安全系数、产品质检、投资风险管控</strong>等。</p>
+<h3 id="2">2，三大抽样分布<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>t分布，t值；卡方分布，卡方值；F分布，F值等其他内容详见后面分享到群的<strong>思维导图</strong>。</p>
+<h2 id="_2">三、应对考试<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1r">1，R语言、数据思维与商业统计作业框架<a class="headerlink" href="#1r" title="Permanent link">&para;</a></h3>
+<p>作业是最好的考题，关于数据分析的项目文档。</p>
+<h3 id="2copilot">2，Copilot的辅助<a class="headerlink" href="#2copilot" title="Permanent link">&para;</a></h3>
+<p>借助GPT和Copilot。</p>
+<p><strong>演示</strong>：</p>
+<p><img alt="500" src="../attachments/64576fffd4929b959aa965afe2a02f7.png" /></p>
+<hr />
+<p>休息时间！</p>
+<p>2018年发布的<a href="https://www.bilibili.com/video/BV1JP4y1A7TG">底特律：变人</a></p>
+<hr />
+<h2 id="copilot">四、关于Copilot<a class="headerlink" href="#copilot" title="Permanent link">&para;</a></h2>
+<h3 id="1copilot">1，Copilot的注册使用<a class="headerlink" href="#1copilot" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>获取的方式：</p>
+<p><a href="https://shop.githubedu.com/buy/28">Copilot远程授权</a>（我个人使用的。之前28元，现在99块，团购15份以上有8折优惠）；</p>
+<p>闲鱼上找找（推荐，我自己买的是28块/年）；</p>
+<p>Github上有免费的一个月试用，但需要绑定国外的银行卡；</p>
+<p>学生验证，有学生邮箱最为方便，没有上传学生卡好像也行，上知乎搜搜。</p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1Vc411R767/">Rstudio的Copilot讲解</a>。</p>
+</li>
+</ul>
+<h3 id="2aigc">2，AIGC浅谈<a class="headerlink" href="#2aigc" title="Permanent link">&para;</a></h3>
+<p>上周二（12月26号）施耐德企业的参访，看去的同学的感想。</p>
+<p><img alt="500" src="../attachments/Pasted%20image%2020231228104207.png" /></p>
+<h4 id="21ai">2.1，什么是<strong>生成式AI</strong>？<a class="headerlink" href="#21ai" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>AIGC（AI Generated Content）：指利用人工智能技术自动生成内容，它可以帮助我们写作、做图、做视频等等，而<strong>Copilot只是AIGC的一种应用</strong>。</p>
+</blockquote>
+<p><strong>《艾瑞咨询-2023年中国AIGC产业全景报告》</strong>（侵删）：</p>
+<p><a href="../attachments/%E8%89%BE%E7%91%9E%E5%8F%91%E5%B8%83%E3%80%8AAIGC%E7%B3%BB%E5%88%97%E6%8A%A5%E5%91%8A--%E4%B8%AD%E5%9B%BDAIGC%E4%BA%A7%E4%B8%9A%E5%85%A8%E6%99%AF%E6%8A%A5%E5%91%8A%E3%80%8B.pdf">艾瑞发布《AIGC系列报告--中国AIGC产业全景报告》</a></p>
+<p><strong>产业图谱</strong>：
+<img alt="Pasted image 20231228104735" src="../attachments/Pasted%20image%2020231228104735.png" /></p>
+<h4 id="22_1">2.2，应用举例<a class="headerlink" href="#22_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>以AIGC生产图片为例</strong>：<a href="https://yige.baidu.com/">文心一格</a></p>
+<p>对这种纯文字的描述大家可能没有具体的感受，我们一起来做个试验：</p>
+<p>时间地点？</p>
+<p>人物？</p>
+<p>事件？</p>
+</li>
+</ul>
+<p>（结果在后面揭示。）</p>
+<ul>
+<li>
+<p><a href="https://callannie.ai/call">英语学习Call Annie</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/jlNB_MrM67k1UUwphAl-ag">盒马设计案例</a></p>
+</li>
+</ul>
+<p>（<strong>看前面AIGC生成的图片！</strong>）</p>
+<h4 id="23">2.3，小结<a class="headerlink" href="#23" title="Permanent link">&para;</a></h4>
+<p><strong>抽象概括：</strong></p>
+<p>科学技术是第一生产力，生产力决定生产关系，生产关系又反作用于生产力。人类社会发展的第一规律：生产力与生产关系的矛盾运动规律。</p>
+<p><strong>形象概括：</strong> </p>
+<p>从Office办公软件替代线下表格、CAD画图软件替代图纸绘图，数据模型替代手工计量、网购替换线下商场都是技术进步带来的生产关系的转变，而生产关系是社会关系中最基本的关系，必然带来<strong>产业结构的调整、行业格局的改变、公司战略的调整、人事部门的变动和人员的升降</strong>。
+<br><br></p>
+<p>老师谈到<strong>丝宝集团的数字化建设</strong>不就是到了不得不进行重大改变的时候了吗？变寓意着风险，可变才有机会。</p>
+<p>OpenAI、Copilot、Call Annie等AIGC工具能应用到如此广的领域，用户又如此的容易上手。这也让我更加坚信这次技术变革将深刻影响现有的社会关系，也深刻地影响着每一位普通人。</p>
+<h2 id="_3">五、其他<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1python">1，关于python的应用浅谈：追求生产力<a class="headerlink" href="#1python" title="Permanent link">&para;</a></h3>
+<p>如果Copilot没有出现，多数人其实没必要学习Python，但Copilot工具的出现，让我觉得只需要明白基础的原理，普通人就能用Python写出解决工作、生活中<strong>重复问题</strong>和用于<strong>辅助决策</strong>的代码。</p>
+<h4 id="11python">1.1，python（蟒蛇）<a class="headerlink" href="#11python" title="Permanent link">&para;</a></h4>
+<p>（1）简略</p>
+<p>python语言跟R语言都是一种<strong>编程语言</strong>，R语言主要针对<strong>统计分析</strong>，而python语言的应用范围非常广阔。</p>
+<p><img alt="Pasted image 20231229101147" src="../attachments/Pasted%20image%2020231229101147.png" /></p>
+<p>（2）推荐理由：<strong>适合交叉应用的个性化工具</strong></p>
+<p>R语言在生活中发挥的作用太浅了，我们很难应用到实际中，但python不同，它跟工作、生活非常贴近！</p>
+<p>从当前阶段上看，python具有易上手、功能全（前、后端）、第三方库多（数据分析、投资分析、机器学习、深度学习等不同领域）等优点；</p>
+<p>Python在TIOBE排行榜中近几年都位居第一位。</p>
+<p><a href="https://www.tiobe.com/tiobe-index/">TIOBE排行榜</a>
+<img alt="500" src="../attachments/Pasted%20image%2020231228090824.png" /></p>
+<h4 id="12_1">1.2，使用的思路<a class="headerlink" href="#12_1" title="Permanent link">&para;</a></h4>
+<p>按照个人使用阶段介绍：</p>
+<p>（1）Excel表格、数据透视表</p>
+<p><img alt="透视表" src="https://www.xunjiepdf.com/wp-content/uploads/2019/08/20190801091247.gif" /></p>
+<p>（2）python的数据透视表应用：</p>
+<p><a href="https://cloud.tencent.com/developer/article/1664630">演示</a></p>
+<p>我们工作会接触大量重复整理信息工作，而这些工作其实都可以进行梳理简化，交给程序完成。我个人当前接触了不少数据重复处理的任务，通过代码化节省了不少时间。</p>
+<p><strong>人工+自动化的螺旋上升原则</strong>：会多少用多少，以便形成正循环。</p>
+<p>（3）数据可视化</p>
+<p>（过）</p>
+<p>（4）SQL</p>
+<p>结构化数据，简单理解就是Excel中按表格存储的数据，只是SQL能存更多的数据，也方便操作。</p>
+<p><img alt="Pasted image 20231230104305" src="../attachments/Pasted%20image%2020231230104305.png" /></p>
+<p><a href="https://zhuanlan.zhihu.com/p/257850338">从SQL读取数</a></p>
+<p>（5）爬虫</p>
+<p>SQL中的数据从何而来？定期爬取数据，存到SQL中。</p>
+<p><strong>百度搜索</strong>就是爬虫，APP中的<strong>搜索框</strong>都含有爬虫的原理。</p>
+<p>不愿意错过惊天大瓜（八卦信息）、洋葱新闻、股价信息、优惠券、服装流行款式、微信红包等信息，都可以爬取汇总。</p>
+<ul>
+<li>
+<p>以二手房信息爬取为例。</p>
+</li>
+<li>
+<p>在云服务器中部署网络爬虫。</p>
+</li>
+</ul>
+<p>（6）Web</p>
+<p>个人的简易博客底层是markdown文件，类似我们编写的Rmd文件，通过后期转化，从而呈现了比较好看的效果，可以理解为<strong>毛坯房和精装修(Web)</strong>，而Web就是将上面的“毛坯”骨架变成方便使用的操作应用。</p>
+<p><a href="https://beingjay.com/2021/01/21/%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6React%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/">链接</a></p>
+<p><img alt="Pasted image 20231230105742" src="../attachments/Pasted%20image%2020231230105742.png" /></p>
+<p><strong>小结：</strong></p>
+<p>爬虫(Python)-SQL-Python(数据清洗、处理、可视化、机器学习、深度学习)-Web(Python)。</p>
+<p>AIGC辅助全程。</p>
+<h4 id="13_1">1.3，一定要结合个人业务<a class="headerlink" href="#13_1" title="Permanent link">&para;</a></h4>
+<p>Python什么都有，但又什么都不“精”，大公司很少用它，但对于个人、小公司它却绰绰有余。</p>
+<p>Python作为工具（生产力），使用工具是为了提高解决问题的效率！向工具要生产力，这是我个人学习python的原则。</p>
+<p>Python和R的底层逻辑相近，但还是有不少差异，虽然易上手，但想要熟练应用还是需要花费些时间和精力，我个人建议大家结合自身实际需求和学习进展综合考虑，采用<strong>效益最大化原则</strong>。</p>
+<h3 id="2_1">2，个人思考<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<h4 id="21_1">2.1，个人的学习建议<a class="headerlink" href="#21_1" title="Permanent link">&para;</a></h4>
+<p>按阶段来。</p>
+<p>（1）<strong>应对考试</strong>：以作业题为准，常用函数的参数设置和问题处理，再借助GPT和Copilot；</p>
+<p>（2）<strong>应用机器学习、深度学习</strong>：</p>
+<p>到这里就不局限于常用R包了，涉及的函数五花八门。可用obsidian等笔记软件进行整理，对于零星函数，积少成多，随时间增删精简。</p>
+<p>需要深入了解<strong>函数参数</strong>，了解参数所代表的<strong>数学原理</strong>，以<a href="https://wngwai.github.io/R/base-content/t.test%28%29/?h=t.test">t.test</a>参数为例。</p>
+<p><img alt="Pasted image 20231230112104" src="../attachments/Pasted%20image%2020231230112104.png" /></p>
+<p>（3）<strong>深度应用（工作）</strong>：随着积累的函数增多，资料库可以作为字典。以实际中<strong>常用项目汇总函数</strong>，如上面分析的数据分析项目，或专门的爬虫项目等。</p>
+<p><code>积少成多进行及时归纳，增量学习，网状记忆！也能防止记乱</code></p>
+<p>（4）<strong>成为个人工具（工具化）</strong>：“借鉴”他人成果，避免重复“造轮子”！很多问题的解决都有现成的内容，如果没有现成的内容那么恭喜你，要么没有价值，要么价值独特。</p>
+<h4 id="22_2">2.2，（后面会删除）<a class="headerlink" href="#22_2" title="Permanent link">&para;</a></h4>
+<h5 id="1_2">1，动力不能只来源于压力：<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h5>
+<p>在行动的过程压力逐步得到释放，会越来越小，达到临界点后反而会变成拖累。体现在越到考试前越动力十足，考试后厌烦的恶性循环中。
+<img alt="500" src="../attachments/Pasted%20image%2020231225123706.png" /></p>
+<p>而兴趣完全相反，随着行动，离目标越近，引力越大，动力越大。
+<img alt="Pasted image 20231225124333" src="../attachments/Pasted%20image%2020231225124333.png" /></p>
+<p>所以，我的<strong>第一条建议</strong>是：如果你要长时间不得不面对一件事，具有压力的同时不要忘了培养兴趣，压力是启动时的推力，兴趣是过程中的吸力。</p>
+<h5 id="2_2">2，如何培养兴趣？<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h5>
+<p>（1）寻找“接触点”</p>
+<p>成年人对很多事物是并没有天然的兴趣，但兴趣是能培养的。而培养的关键就是找到适合个人的兴趣或者不太厌恶的“接触点”。</p>
+<p>我以学习爬虫为例，你的兴趣点在那？抢红包、演唱会门票、好玩推荐、影片图书排行榜、自动签到、收集整理每日资料、进行投资决策等，总能找到关联点！我对于python的兴趣点是节省工作时间和提高个人效率，从而有时间做些别的事情。</p>
+<p>又例如大家都好像对赚钱感兴趣，但其实未必喜欢钱本身，只是喜欢钱所带来的“自由”。</p>
+<p>（2）关注个人能力和优势</p>
+<p>其实很多兴趣的来源源于个人的特长和优势。大部分人对打游戏会比较感兴趣，但如果设上一个难度目标，很多人会感到非常痛苦。</p>
+<h5 id="3_1">3，处理压力<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h5>
+<p>会有人说我对某事毫无兴趣，也找不到能吸引你的地方，但又不得不长时间面对，这时就要做好压力的处理。</p>
+<p>（1）区分关注圈和影响圈</p>
+<ul>
+<li>注意力在影响圈外：心有余而力不足，而很大一部分压力来源于此；</li>
+<li>注意力在影响圈内：改变自己能改变的，才能渐渐扩大影响圈；</li>
+<li>影响圈大于关注圈：影响力没能发挥出来。</li>
+</ul>
+<blockquote>
+<p>《高效能人士的七个习惯》
+<img alt="Pasted image 20231230123244" src="../attachments/Pasted%20image%2020231230123244.png" /></p>
+</blockquote>
+<p>（2）拆解目标，促进行为</p>
+<p>改变自己能改变的，为什么能渐渐扩大影响圈？可以看下下面的内容。</p>
+<blockquote>
+<p>《福格行为模型》，B（行为）=M（动机）+A（能力）+P（提示）</p>
+<p>当动机较大时。
+<img alt="Pasted image 20231230133447" src="../attachments/Pasted%20image%2020231230133447.png" /></p>
+<p>当动机较小时，能力的影响。
+<img alt="Pasted image 20231230133506" src="../attachments/Pasted%20image%2020231230133506.png" /></p>
+<p>不断重复一种行为，会让它变得更容易做到。
+<img alt="Pasted image 20231230133747" src="../attachments/Pasted%20image%2020231230133747.png" /></p>
+</blockquote>
+<p>拆解大的目标，直到满足自身能力，产生行动为止，最终重复行为得到动机和能力的提升，实现螺旋式上升！这是对“注意力在影响圈内，能渐渐扩大影响圈的”个人解读。以我个人跑步为例。</p>
+<p>（3）适当的锻炼：培养耐心</p>
+<p>锻炼本身就是忍耐痛苦和获得成就感的螺旋上升过程。即便是坐久了，站起来舒展筋骨都是不错的方式。</p>
+<p>（4）间接性休息：</p>
+<p>个人注意力难以长时间集中，如果开了小差、如果实在不想做，就先放下。有时自己长时间做一件事时，会很心烦，会忍不住拿起手机，但其实看手机内心也难以安定，其实这个时间穿插别的事情，或者起来走动走动，让自己放松放松会非常有效。</p>
+<blockquote>
+<p>《认知觉醒》，注意力曲线，注意力随时间递减
+<img alt="Pasted image 20231230123432" src="../attachments/Pasted%20image%2020231230123432.png" /></p>
+</blockquote>
+<h5 id="4">4，最后的建议<a class="headerlink" href="#4" title="Permanent link">&para;</a></h5>
+<p>（1）肯定自己：</p>
+<p>完成小任务后，请及时“肯定”自己。</p>
+<p>及时：一旦做成某件事情，就要及时“肯定自己”；</p>
+<p>肯定：不是只有物质奖励，行为暗示也行，比如捏紧拳头做出鼓舞的姿势。</p>
+<p>更多的内容可以看《福格行为模型》，当个人建立更多的信心时，有些事就自然而然能够做下去！</p>
+<p>（2）接受自己：</p>
+<p>改变自己能够改变的，接受自己不能改变的！毕竟大家压力已经够大了。</p>
+<h2 id="_4">结束语<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>感谢大家的观看。预祝大家元旦快乐！身体健康，恭喜发财！</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      WngWai CC-BY-4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://wngwai.github.io" target="_blank" rel="noopener" title="GitHub | WngWai" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<540283384@qq.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
